@@ -83,6 +83,7 @@
     <Content Include="userLayer\media\TurboTrend_Logo-glow.png" />
     <Content Include="userLayer\media\TurboTrend_Logo-white.png" />
     <Content Include="userLayer\media\TurboTrend_Logo.png" />
+    <Content Include="userLayer\Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="userLayer\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userLayer\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userLayer\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\TurboTrend.Master.cs">
       <DependentUpon>TurboTrend.Master</DependentUpon>
