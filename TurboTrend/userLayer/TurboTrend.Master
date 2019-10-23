@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TurboTrend.Master.cs" Inherits="TurboTrend.userLayer.Site1" %>
+
+<!DOCTYPE html public "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head runat="server">
+        <title>TurboTrend</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, intial-scale=1" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="css/style.css?=1105" />
+		<link rel="icon" type="image/png" href="media/turbo.png" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
+    </head>
+
+    <body>
+        <form id="form1" runat="server">
+	        <div class="header">
+			<div class="gradientFill">
+				<div class="headerContent"> <!--Photo by Jakob Owens on Unsplash - https://unsplash.com/photos/WDaO5vw1oYU -->
+					<a href="home.aspx"><img src="media/TurboTrend_Logo-glow.png" width="55%" height="auto" style="margin: 5% 0% 0% 0%;" /></a>
+					<nav>
+						<a href="about.aspx">About</a>
+						<a href="features.aspx">Features</a>
+						<a href="blog.aspx">Blog</a>
+						<a href="contact.aspx">Contact</a>
+						<a href="login.aspx">Login</a>
+						<a class="btnSignUp" href="signup.aspx">Sign Up</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="mainBlock">
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+		</div>
+            <div class="footerContent">
+			    <div class="footer">
+				    <a href="index.aspx"><img src="media/TurboTrend_Logo-white.png" width="30%" height="auto" style="margin: 2% 0% 2% 0%;" /></a>
+				    <nav>
+					    <a class="footerNav" href="about.aspx">About</a>
+					    <a class="footerNav" href="features.aspx">Features</a>
+					    <a class="footerNav" href="pricing.aspx">Pricing</a> 
+					    <a class="footerNav" href="blog.aspx">Blog</a>
+					    <a class="footerNav" href="contact.aspx">Contact</a>
+					    <a class="footerNav" href="login.aspx">Login</a>
+					    <a class="footerNav btnSignUp" href="signup.aspx">Sign Up</a>
+				    </nav>
+			    </div>
+		    </div>
+        </form> 
+    </body>
+</html>

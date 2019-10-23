@@ -1,0 +1,99 @@
+﻿body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+nav {
+    text-align: right;
+}
+
+    nav a {
+        padding-left: 3%;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #ffffff;
+    }
+
+.btnSignUp {
+    background-color: #2e3486;
+    padding: 1.2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 8px;
+}
+
+.header {
+    background-image: url("../media/headerimage3.jpg");
+    height: 40vh;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.headerContent {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-row-start: 1;
+    align-items: center;
+}
+
+.gradientFill {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(2,0,36,0.7) 35%, rgba(255,255,255,0) 100%);
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(2,0,36);
+    font-weight: bolder;
+    font-size: 2.8rem;
+    margin-top: 3%;
+    grid-row-start: 2;
+}
+
+.mainBlock {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    height: 80vh;
+}
+
+.heroSection {
+    display: grid;
+    grid-column-start: 2;
+    background-color: #ffffff;
+    position: relative;
+    top: -30%;
+}
+
+.heroWrap {
+    column-gap: 2%;
+    grid-row-gap: 2%;
+    border-style: solid 1px #000000;
+}
+
+.footer {
+    background-color: #5b4774;
+}
+
+.footerContent {
+    clear:both;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.footerNav {
+    font-size: 1rem;
+}
