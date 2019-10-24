@@ -54,13 +54,11 @@ namespace TurboTrend.Business
                 dataRow[2] = listAcc[i].accountFollowers;
                 dataRow[3] = listAcc[i].accountFollowing;
                 dataRow[4] = listAcc[i].accountPosts;
-                dataRow[5] = 99; // Engagement Rate
-                dataRow[6] = 10; //Cost per post
+                dataRow[5] = 99; // Engagement Rate, talk to Jeremy
+                dataRow[6] = 10; // Cost per post
                 dataRow[7] = 10; // Posts last 60 days
+                dt.Rows.Add(dataRow);
             }
-
-            //grdCategories.DataSource = dt;
-            //grdCategories.DataBind();
 
             SqlConnection conn = null;
             SqlDataReader rdr = null;
