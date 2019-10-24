@@ -45,7 +45,7 @@ namespace TurboTrend.userLayer
             int errorCode = -1;
             try
             {
-                conn = new SqlConnection(@"Server=DESKTOP-UOOEQ82\SQLEXPRESS;DataBase=TurboTrend;Integrated Security=SSPI");
+                conn = new SqlConnection((new ProjectConfig().DBConnectionString));
 
                 using (SqlCommand cmd = new SqlCommand("sp_CreateAccountAndBusiness"))
                 {

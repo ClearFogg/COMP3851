@@ -32,7 +32,7 @@ namespace TurboTrend.userLayer
         private string verifyLogin()
         {
             SqlConnection conn = null;
-            conn = new SqlConnection(@"Server=DESKTOP-UOOEQ82\SQLEXPRESS;DataBase=TurboTrend;Integrated Security=SSPI");
+            conn = new SqlConnection((new ProjectConfig().DBConnectionString));
             int errorCode = -1;
             string businessName = null;
             using (SqlCommand cmd = new SqlCommand("sp_verifyLogin"))
