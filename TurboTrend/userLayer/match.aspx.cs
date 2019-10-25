@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TurboTrend.Business;
 using TurboTrend.InstagramScraper;
 using TurboTrend.Model;
 
@@ -21,30 +22,14 @@ namespace TurboTrend.userLayer
             }
         }
 
-        private void InsertHashtagIntoDB(string input)
-        {
-            SqlConnection conn = null;
-            conn = new SqlConnection(@"Server=DESKTOP-3S0MBR6\SQLEXPRESS;DataBase=TurboTrend;Integrated Security=SSPI");
-            using (SqlCommand cmd = new SqlCommand("sp_InsertHashtag"))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = conn;
-                cmd.Parameters.AddWithValue("@hashtagtxt", input);
-                cmd.Parameters.AddWithValue("@businessName", Session["businessName"].ToString());
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-        }
-
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             ScraperConnection scraper = new ScraperConnection();
+            DatabaseConnection db = new DatabaseConnection();
             scraper.interpretHashTagAndSearch(hashtag.Text);
+            db.InsertInfluencerIntoDB();
+            db.InsertHashtagIntoDB(hashtag.Text, Session["businessName"].ToString());
 
-
-            InsertHashtagIntoDB(hashtag.Text);
-            InsertInfluencerIntoDB();
         }
 
 

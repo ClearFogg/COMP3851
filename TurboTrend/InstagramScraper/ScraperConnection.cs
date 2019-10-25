@@ -48,12 +48,11 @@ namespace TurboTrend.InstagramScraper
             {
                 getInfoFromHashtag(uniqueSearch.ToArray());
             }
-
         }
 
         private List<string> checkInput(string sCheck, string sInput)
         {
-            List<string> sReturnArray = new List<string>;
+            List<string> sReturnArray = new List<string>();
 
             if (sInput.Contains(sCheck))
             {
