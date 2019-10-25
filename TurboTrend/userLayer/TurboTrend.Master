@@ -18,7 +18,7 @@
 	        <div class="header">
 			<div class="gradientFill">
 				<div class="headerContent"> <!--Photo by Jakob Owens on Unsplash - https://unsplash.com/photos/WDaO5vw1oYU -->
-					<a href="home.aspx"><img src="media/TurboTrend_Logo-glow.png" width="55%" height="auto" style="margin: 5% 0% 0% 0%;" /></a>
+					<a href="index.aspx"><img src="media/TurboTrend_Logo-glow.png" width="55%" height="auto" style="margin: 5% 0% 0% 0%;" /></a>
 					<nav>
 						<a href="about.aspx">About</a>
 						<a href="features.aspx">Features</a>
@@ -38,15 +38,15 @@
             <div class="footerContent">
 			    <div class="footer">
 				    <a href="index.aspx"><img src="media/TurboTrend_Logo-white.png" width="30%" height="auto" style="margin: 2% 0% 2% 0%;" /></a>
-				    <nav>
+				    <div div style="margin-top: 4%; margin-left: 55%;">
 					    <a class="footerNav" href="about.aspx">About</a>
 					    <a class="footerNav" href="features.aspx">Features</a>
 					    <a class="footerNav" href="pricing.aspx">Pricing</a> 
 					    <a class="footerNav" href="blog.aspx">Blog</a>
 					    <a class="footerNav" href="contact.aspx">Contact</a>
 					    <a class="footerNav" href="login.aspx">Login</a>
-					    <a class="footerNav btnSignUp" href="signup.aspx">Sign Up</a>
-				    </nav>
+					    <a class="btnSignUp footerNav" href="signup.aspx">Sign Up</a>
+				    </div>
 			    </div>
 		    </div>
         </form> 

@@ -7,7 +7,7 @@
 		    <div class="heroRow">
 			    <div class="heroContainer heroWrap">
 				    <h1>Find Your Match</h1>
-                    <p style="text-align:center">Enter up to six hashtags (separated by commas) and set your search parameters.</p>
+                    <p style="text-align:center">Enter up to three hashtags (separated by commas) and set your search parameters.</p>
                     <br />
                 </div>
 			<div class="heroContainer heroWrap">

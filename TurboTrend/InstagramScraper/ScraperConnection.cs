@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.IO;
+using System.Data;
 using TurboTrend.Model;
+using TurboTrend.Business;
 
 namespace TurboTrend.InstagramScraper
 {
@@ -13,9 +15,15 @@ namespace TurboTrend.InstagramScraper
 
         public ScraperConnection() { } // Do nothing
 
-        public void interpretHashTagAndSearch(string sUserInput)
+        public DataTable interpretHashTagAndSearch(string sUserInput)
         {
             List<string> uniqueSearch = new List<string>();
+
+            // Remove the # incase the user includes them
+            while (sUserInput.Contains('#'))
+            {
+                sUserInput.Remove(sUserInput.IndexOf("#"), 1);
+            }
 
             // If any commas are present, split the search by that term
             if (sUserInput.Contains(", "))
@@ -33,6 +41,10 @@ namespace TurboTrend.InstagramScraper
                 List<string> containsSpace = checkInput(" ", sUserInput);
                 foreach (string element in containsSpace) { if (!uniqueSearch.Contains(element)) { uniqueSearch.Add(element); } }
             }
+            else
+            {
+                uniqueSearch.Add(sUserInput);
+            }
 
             if (uniqueSearch.Count > (new ProjectConfig().MaxSearchTerms))
             {
@@ -48,6 +60,12 @@ namespace TurboTrend.InstagramScraper
             {
                 getInfoFromHashtag(uniqueSearch.ToArray());
             }
+
+
+            DatabaseConnection db = new DatabaseConnection();
+            DataTable dbTable = db.InsertInfluencerIntoDB(accList);
+
+            return dbTable;
         }
 
         private List<string> checkInput(string sCheck, string sInput)
@@ -142,9 +160,9 @@ namespace TurboTrend.InstagramScraper
                 Account acTemp = new Account();
                 acTemp.accountUrl = tempList[i];
                 acTemp.accountName = tempList[i].Substring("https://www.instagram.com/".Length);
-                acTemp.accountFollowers = tempList[i + 1];
-                acTemp.accountFollowing = tempList[i + 2];
-                acTemp.accountPosts = tempList[i + 3];
+                acTemp.accountFollowers = numConverter(tempList[i + 1]);
+                acTemp.accountFollowing = numConverter(tempList[i + 2]);
+                acTemp.accountPosts = numConverter(tempList[i + 3]);
 
                 accHolder.Add(acTemp);
             }

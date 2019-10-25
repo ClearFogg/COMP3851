@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TurboTrend.Business;
 using TurboTrend.InstagramScraper;
 using TurboTrend.Model;
 
@@ -22,13 +21,15 @@ namespace TurboTrend.userLayer
             }
         }
 
+
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             ScraperConnection scraper = new ScraperConnection();
-            DatabaseConnection db = new DatabaseConnection();
-            scraper.interpretHashTagAndSearch(hashtag.Text);
-            db.InsertInfluencerIntoDB();
-            db.InsertHashtagIntoDB(hashtag.Text, Session["businessName"].ToString());
+            DataTable dTable = scraper.interpretHashTagAndSearch(hashtag.Text);
+
+            grdCategories.DataSource = dTable;
+            grdCategories.DataBind();
 
         }
 
