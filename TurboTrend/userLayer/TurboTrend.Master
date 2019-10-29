@@ -23,10 +23,10 @@
 			                <div class="nav">
                                 <a href="about.aspx">About</a>
 						        <a href="features.aspx">Features</a>
-						        <a href="faq.aspx">Blog</a>
+						        <a href="faq.aspx">FAQs</a>
 						        <a href="contact.aspx">Contact</a>
-						        <a href="login.aspx">Login</a>
-						        <a class="btnSignUp" href="signup.aspx">Sign Up</a>
+                                <asp:HyperLink ID="LoginOrAccount" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login"></asp:HyperLink>
+                                <asp:HyperLink ID="SignUpOrMatch" runat="server" style="background-color: #2e3486;padding: 1.2%;margin-left: 2%;margin-right: 2%;border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up"/>
 			                </div>
                         </div>
                     </div>
@@ -40,10 +40,10 @@
                         <div class="footerNav">
                             <a href="about.aspx">About</a>
 						    <a href="features.aspx">Features</a>
-						    <a href="faq.aspx">Blog</a>
+						    <a href="faq.aspx">FAQs</a>
 						    <a href="contact.aspx">Contact</a>
-						    <a href="login.aspx">Login</a>
-						    <a class="btnSignUp" href="signup.aspx">Sign Up</a>
+                            <asp:HyperLink ID="LoginOrAccountSecond" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login"></asp:HyperLink>
+                            <asp:HyperLink ID="SignUpOrMatchSecond" runat="server" style="background-color: #2e3486;padding: 1.2%;margin-left: 2%;margin-right: 2%;border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up"/>
                         </div>
                     </div>
                 </div>

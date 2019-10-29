@@ -73,7 +73,12 @@
     <Content Include="userLayer\forgotPassword.aspx" />
     <Content Include="userLayer\login.aspx" />
     <Content Include="userLayer\match.aspx" />
+    <Content Include="userLayer\media\begin.jpg" />
+    <Content Include="userLayer\media\cactusCam.jpg" />
+    <Content Include="userLayer\media\desktopPic.jpg" />
     <Content Include="userLayer\media\headerImage.jpg" />
+    <Content Include="userLayer\media\insta.jpg" />
+    <Content Include="userLayer\media\instaStickers.jpg" />
     <Content Include="userLayer\media\iPhone.jpg" />
     <Content Include="userLayer\signup.aspx" />
     <Content Include="userLayer\faq.aspx" />
