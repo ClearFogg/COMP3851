@@ -25,17 +25,19 @@ namespace TurboTrend.InstagramScraper
                 sUserInput.Remove(sUserInput.IndexOf("#"), 1);
             }
 
-            // If any commas are present, split the search by that term
+            // If commas and a spaces are used to seperate the hashtags, split the search by that term
             if (sUserInput.Contains(", "))
             {
                 List<string> containsCommaSpace = checkInput(", ", sUserInput);
                 foreach (string element in containsCommaSpace) { if (!uniqueSearch.Contains(element)) { uniqueSearch.Add(element); } }
             }
+            // If commas are used to seperate the hashtags, split the search by that term
             else if (sUserInput.Contains(","))
             {
                 List<string> containsComma = checkInput(",", sUserInput);
                 foreach (string element in containsComma) { if (!uniqueSearch.Contains(element)) { uniqueSearch.Add(element); } }
             }
+            // If spaces are used to seperate the hashtags, split the search by that term
             else if (sUserInput.Contains(' '))
             {
                 List<string> containsSpace = checkInput(" ", sUserInput);
@@ -44,6 +46,15 @@ namespace TurboTrend.InstagramScraper
             else
             {
                 uniqueSearch.Add(sUserInput);
+            }
+
+            DatabaseConnection db = new DatabaseConnection();
+
+
+            // Adds the searched hashtag, and the business that searched them into the database
+            foreach (string term in uniqueSearch)
+            {
+                db.InsertHashtagIntoDB(term);
             }
 
             if (uniqueSearch.Count > (new ProjectConfig().MaxSearchTerms))
@@ -62,8 +73,9 @@ namespace TurboTrend.InstagramScraper
             }
 
 
-            DatabaseConnection db = new DatabaseConnection();
+            
             DataTable dbTable = db.InsertInfluencerIntoDB(accList);
+
 
             return dbTable;
         }

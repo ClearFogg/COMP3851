@@ -85,6 +85,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\AccountManager.cs" />
+    <Compile Include="Business Layer\EmailManager.cs" />
     <Compile Include="Data Access Layer\DatabaseConnection.cs" />
     <Compile Include="InstagramScraper\ScraperConnection.cs" />
     <Compile Include="Model\Account.cs" />
