@@ -1,5 +1,5 @@
+# coding=UTF-8
 import sys
-
 from selenium import webdriver
 import time
 from selenium.webdriver.chrome.options import Options
@@ -8,6 +8,14 @@ from bs4 import BeautifulSoup as soup
 import requests
 from multiprocessing.pool import ThreadPool
 from Account import Account as usrAcc
+import os
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
+os.chdir(r"/Users/Nick/source/repos/MajorProjectAssignment/MajorProjectAssignment/InstagramScraper/")
 
 # Initial user agent
 Options = webdriver.ChromeOptions()
@@ -17,7 +25,7 @@ driver = webdriver.Chrome(options=Options)
 
 accPostNo = 10
 hashPostNo = 200
-numOfScrolls = 20
+numOfScrolls = 1
 
 
 def replace_char(text):
@@ -54,17 +62,14 @@ def get_posts(url):
         # If the page returns 0 results, there must be an error or failure to connect. Quit the web application.
         if len(posts) == 0:
             driver.quit()
-
         else:
             return posts
-
     except:
         driver.quit()
         return posts
 
 
 def post_info(url, num):
-
     postInfo = get_posts(url)
 
     newAccountsURL = []
@@ -92,6 +97,8 @@ def post_info(url, num):
                         found = True
                     else:
                         break
+                if found is True:
+                    break;
 
             cleanAccName = replace_char(accName)
 
@@ -142,48 +149,66 @@ def accountPosts(url, num):
     driver.quit()
 
 
-def account_info(urlList, postNum):
-    numOfPosts = postNum
+def account_info(URL):
+    acInfoDriver = webdriver.Chrome(options=Options)
 
-    specificAccInfo = []
+    accountHolder = []
 
-    for i in range(0, len(urlList)):
-        ua = UserAgent()
-        userAgent = ua.random
-        Options.add_argument(f'user-agent={userAgent}')
+    for iPos in range(0, (len(URL))):
+        acInfoDriver.get(URL[iPos])
+        time.sleep(2)
+
+        if acInfoDriver.current_url == "https://www.instagram.com/accounts/login/":
+            try:
+                loginAccount(acInfoDriver)
+                acInfoDriver.get(URL[iPos])
+                time.sleep(2)
+            except:
+                pass
 
         try:
-            accountUrl = requests.get(urlList[i])
-            accountPage = soup(accountUrl.content, "html.parser")
+            accountPage = soup(acInfoDriver.page_source, "html.parser")
             description = accountPage.find_all("meta", attrs={'property': 'og:description'})
 
             # Account information
             text = description[0].get('content')
             text = text.split()
 
-            accName = urlList[i]
+            accName = URL[iPos]
             followers = text[0]
             following = text[2]
             posts = text[4]
 
             tempHolderAcc = usrAcc(accName, followers, following, posts)
-            specificAccInfo.append(tempHolderAcc)
-
-
+            accountHolder.append(tempHolderAcc)
         except:
-            i += 1
+            iPos += 1
 
-    return specificAccInfo
+    acInfoDriver.quit()
+
+    return accountHolder
+
+
+def loginAccount(requestDriver):
+
+    login_credentials = requestDriver.find_elements_by_css_selector("._2hvTZ.pexuQ.zyHYP")
+
+    login_credentials[0].send_keys("turbotrend1")
+    login_credentials[1].send_keys("Turbotrend_2019!")
+
+    requestDriver.find_element_by_xpath("/html/body/span/section/main/div/article/div/div[1]/div/form/div[4]/button").click()
+
+    time.sleep(2)
 
 
 def main(tag):
-    # for i in range(len(tags)):
     ua = UserAgent()
     userAgent = ua.random
     Options.add_argument(f'user-agent={userAgent}')
 
     accountsFound = post_info("https://www.instagram.com/explore/tags/" + tag, hashPostNo)
-    accountsInfo = account_info(accountsFound, accPostNo)
+
+    accountsInfo = account_info(accountsFound)
 
     return accountsInfo
 
@@ -195,7 +220,7 @@ if __name__ == '__main__':
         pool = ThreadPool()
 
         asyncResult = []
-        for i in range(1, len(searchingForTags)):
+        for i in range(0, len(searchingForTags)):
             asyncResult.append(pool.apply_async(main, (searchingForTags[i],)))
 
         bigListOfAccounts = []
@@ -209,6 +234,15 @@ if __name__ == '__main__':
         for account in bigListOfAccounts:
             bigOlStringThatGetsPrintedSoCSharpCanSeeIt += "\\" + account.account + "\\" + account.followers + "\\" + account.following + "\\" + account.posts
 
-        print(bigOlStringThatGetsPrintedSoCSharpCanSeeIt)
+        # Just checks if an instagram account is present, if nothing is present we just return to c# with an error term.
+        if len(bigListOfAccounts) > 0:
+            print(bigOlStringThatGetsPrintedSoCSharpCanSeeIt)
+        else:
+            # This error term needs to be a unique phrase that an Instagram account is unable to be named, otherwise C# will read an instagram account as an error term
+            print("THEREISANERROR-.-")
+
+        exit(0)
     else:
         print("No command arguments found.")
+        exit(1)
+
