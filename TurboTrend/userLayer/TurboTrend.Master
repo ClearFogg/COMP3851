@@ -15,40 +15,39 @@
 
     <body>
         <form id="form1" runat="server">
-	        <div class="header">
-			<div class="gradientFill">
-				<div class="headerContent"> <!--Photo by Jakob Owens on Unsplash - https://unsplash.com/photos/WDaO5vw1oYU -->
-					<a href="index.aspx"><img src="media/TurboTrend_Logo-glow.png" width="55%" height="auto" style="margin: 5% 0% 0% 0%;" /></a>
-					<nav>
-						<a href="about.aspx">About</a>
-						<a href="features.aspx">Features</a>
-						<a href="blog.aspx">Blog</a>
-						<a href="contact.aspx">Contact</a>
-						<a href="login.aspx">Login</a>
-						<a class="btnSignUp" href="signup.aspx">Sign Up</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-		<div class="mainBlock">
-            <asp:ContentPlaceHolder ID="mainContent" runat="server">
-
-            </asp:ContentPlaceHolder>
-		</div>
-            <div class="footerContent">
-			    <div class="footer">
-				    <a href="index.aspx"><img src="media/TurboTrend_Logo-white.png" width="30%" height="auto" style="margin: 2% 0% 2% 0%;" /></a>
-				    <div div style="margin-top: 4%; margin-left: 55%;">
-					    <a class="footerNav" href="about.aspx">About</a>
-					    <a class="footerNav" href="features.aspx">Features</a>
-					    <a class="footerNav" href="pricing.aspx">Pricing</a> 
-					    <a class="footerNav" href="blog.aspx">Blog</a>
-					    <a class="footerNav" href="contact.aspx">Contact</a>
-					    <a class="footerNav" href="login.aspx">Login</a>
-					    <a class="btnSignUp footerNav" href="signup.aspx">Sign Up</a>
-				    </div>
-			    </div>
-		    </div>
+            <div class="content">
+	            <div class="headerGrid">
+    			    <div class="header"> <!--Photo by Jakob Owens on Unsplash - https://unsplash.com/photos/WDaO5vw1oYU -->
+                        <div class="gradientFill">
+                            <a href="index.aspx" class="logoLink"><img src="media/TurboTrend_Logo-glow.png" alt="TurboTrend Logo" class="logo" /></a>
+			                <div class="nav">
+                                <a href="about.aspx">About</a>
+						        <a href="features.aspx">Features</a>
+						        <a href="faq.aspx">Blog</a>
+						        <a href="contact.aspx">Contact</a>
+						        <a href="login.aspx">Login</a>
+						        <a class="btnSignUp" href="signup.aspx">Sign Up</a>
+			                </div>
+                        </div>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    <!-- Page Content -->
+                </asp:ContentPlaceHolder>
+                <div class="footerGrid">
+                    <div class="footer">
+                        <a href="index.aspx" class="logoLinkFooter"><img src="media/TurboTrend_Logo-white.png" alt="TurboTrend Logo" class="logoFooter" /></a>
+                        <div class="footerNav">
+                            <a href="about.aspx">About</a>
+						    <a href="features.aspx">Features</a>
+						    <a href="faq.aspx">Blog</a>
+						    <a href="contact.aspx">Contact</a>
+						    <a href="login.aspx">Login</a>
+						    <a class="btnSignUp" href="signup.aspx">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form> 
     </body>
 </html>
