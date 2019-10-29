@@ -35,7 +35,7 @@ namespace TurboTrend.Business
             return iReturnCode;
         }
 
-        public int createAccount(string sName, string sBusinessName, string sPassword, string sEmail)
+        public int createAccount(string sName, string sBusinessName, string sPassword, string sEmail, string sPhone, string sIndustry)
         {
             SqlConnection conn = null;
             int errorCode = -1;
@@ -51,6 +51,8 @@ namespace TurboTrend.Business
                     cmd.Parameters.AddWithValue("@bName", sBusinessName);
                     cmd.Parameters.AddWithValue("@pword", sPassword);
                     cmd.Parameters.AddWithValue("@email", sEmail);
+                    cmd.Parameters.AddWithValue("@phone", sPhone);
+                    cmd.Parameters.AddWithValue("@industry", sIndustry);
                     cmd.Parameters.AddWithValue("@errorCode", errorCode);
                     var returnParameter = cmd.Parameters.Add("@errorCode", SqlDbType.Int);
                     returnParameter.Direction = ParameterDirection.ReturnValue;

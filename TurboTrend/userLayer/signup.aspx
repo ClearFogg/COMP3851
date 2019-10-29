@@ -30,10 +30,19 @@
             <div style="width: 30%">
                 <asp:TextBox ID="email" TextMode="Email" class="form-control" placeholder="example@user.com" runat="server" style=" margin-right:auto;"></asp:TextBox>
             </div>
-
+            <br />
+            <h2>Phone:</h2>
+            <div style="width: 30%">
+                <asp:TextBox ID="phone" TextMode="Phone" class="form-control" placeholder="Phone" runat="server" style=" margin-right:auto;"></asp:TextBox>
+            </div>
+            <br />
+            <h2>Industry:</h2>
+            <div style="width: 30%">
+                <asp:TextBox ID="industry" class="form-control" placeholder="Industry" runat="server" style=" margin-right:auto;"></asp:TextBox>
+            </div>
             <br />
             <asp:Button ID="btnSubmit" class="btnSignUp" runat="server" Text="Submit" OnClick="btnSubmit_OnClick"/> <!--OnClick="submitButtonClick" />-->
-    </asp:Panel>
+          </asp:Panel>
             <br />
             <asp:Label ID="AccountMsg" runat="server" Text=""></asp:Label>
             <br />
@@ -41,12 +50,9 @@
                 <br />        
                         </div>
 					    <div class="heroContainer heroWrap"></div>
-				    </div>
 				    <div class="heroRow">
 					    <div class="heroContainer heroWrap"></div>
 					    <div class="heroContainer heroWrap"></div>
 					    <div class="heroContainer heroWrap"></div>
 				    </div>
-			    </div>
-    
 </asp:Content>
