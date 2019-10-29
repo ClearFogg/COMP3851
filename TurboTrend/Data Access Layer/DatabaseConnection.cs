@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using TurboTrend.InstagramScraper;
 using TurboTrend.Model;
 
 namespace TurboTrend.Business
@@ -12,6 +11,29 @@ namespace TurboTrend.Business
     public class DatabaseConnection
     {
         public DatabaseConnection() { }
+
+        public int changePassword(string sPassword, string sEmail)
+        {
+            int iReturnCode = 0;
+
+            SqlConnection conn = new SqlConnection((new ProjectConfig().DBConnectionString));
+            using (SqlCommand cmd = new SqlCommand("sp_ChangeUserPassword"))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("@Email", sEmail);
+                cmd.Parameters.AddWithValue("@NewPword", sPassword);
+                cmd.Parameters.AddWithValue("@returnCode", iReturnCode);
+                var returnParameter = cmd.Parameters.Add("@returnCode", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                iReturnCode = Convert.ToInt32(returnParameter.Value);
+                conn.Close();
+            }
+
+            return iReturnCode;
+        }
 
         public int createAccount(string sName, string sBusinessName, string sPassword, string sEmail)
         {

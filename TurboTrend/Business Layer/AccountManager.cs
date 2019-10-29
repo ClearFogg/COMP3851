@@ -25,6 +25,38 @@ namespace TurboTrend.Business_Layer
             return iReturnedValue;
         }
 
+        public int changePassword(string sPassword, string sEmail)
+        {
+            string sHashedPassword = hashPword(sPassword);
+
+            string sNewEmail = "";
+            foreach(char letter in sEmail)
+            {
+                if (letter == ',')
+                {
+                    sNewEmail += ".";
+                }
+                else
+                {
+                    sNewEmail += letter;
+                }
+            }
+                       
+            // iReturnedValue expected values
+            // 1 - Account doesn't exist
+            // 2 - Password changed
+
+            int iReturnedValue = -1;
+
+            DatabaseConnection db = new DatabaseConnection();
+            iReturnedValue = db.changePassword(sHashedPassword, sNewEmail);
+
+            return iReturnedValue;
+
+
+
+        }
+
         public int loginAccount(string sUsername, string sPassword)
         {
             int iReturnedValue = -1;
