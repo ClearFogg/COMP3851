@@ -69,7 +69,12 @@
     <Content Include="userLayer\features.aspx" />
     <Content Include="userLayer\login.aspx" />
     <Content Include="userLayer\match.aspx" />
+    <Content Include="userLayer\media\begin.jpg" />
+    <Content Include="userLayer\media\cactusCam.jpg" />
+    <Content Include="userLayer\media\desktopPic.jpg" />
     <Content Include="userLayer\media\headerImage.jpg" />
+    <Content Include="userLayer\media\insta.jpg" />
+    <Content Include="userLayer\media\instaStickers.jpg" />
     <Content Include="userLayer\media\iPhone.jpg" />
     <Content Include="userLayer\signup.aspx" />
     <Content Include="userLayer\faq.aspx" />
@@ -80,7 +85,6 @@
     <Content Include="userLayer\media\TurboTrend_Logo-glow.png" />
     <Content Include="userLayer\media\TurboTrend_Logo-white.png" />
     <Content Include="userLayer\media\TurboTrend_Logo.png" />
-    <Content Include="userLayer\Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -144,13 +148,6 @@
     </Compile>
     <Compile Include="userLayer\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="userLayer\Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="userLayer\Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\TurboTrend.Master.cs">
       <DependentUpon>TurboTrend.Master</DependentUpon>

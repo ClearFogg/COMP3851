@@ -3,21 +3,18 @@
 <asp:Content ID="home" ContentPlaceHolderID="mainContent" runat="server">
     <div class="mainGrid">
         <h1>Login</h1>
-        <br />
         <div>
             <h2 style="text-align: left;">Username:</h2>
-            <asp:TextBox ID="usernameBox" runat="server" class="form-control" placeholder="Username"></asp:TextBox>
+            <asp:TextBox ID="usernameBox" runat="server" placeholder="Username" class="textBox"></asp:TextBox>
         </div>
-        
+        <div style="margin-top: 3%;">
+            <h2 style="text-align: left;">Password:</h2>
+            <asp:TextBox ID="passwordBox" TextMode="Password" placeholder="*******" runat="server" class="textBox"></asp:TextBox>
+            <p><a href="forgotPassword.aspx">Forgotten your password? Click here!</a></p>
+        </div>
+        <asp:Label ID="LoginMsg" runat="server" Text=""></asp:Label>
         <br />
-        <div>
-            <h2 style="text-align: left; display: inline;">Password:</h2>
-            <asp:TextBox ID="passwordBox" TextMode="Password" class="form-control" placeholder="*******" runat="server" style="display: inline;"></asp:TextBox>
-            <a href="forgotPassword.aspx">Forgotten your password? Click here!</a>
-            <asp:Label ID="LoginMsg" runat="server" Text=""></asp:Label>
-        </div >
-        <br />
-        <asp:Button ID="btnSubmit" class="btnSignUp" runat="server" Text="Login" OnClick="btnSubmit_OnClick"/>
+        <asp:Button ID="btnSubmit" class="btnSignUp" runat="server" Text="Continue" OnClick="btnSubmit_OnClick" style="font-size: 1.2rem; margin: 0;" />
         <br />
         <br />
     </div>

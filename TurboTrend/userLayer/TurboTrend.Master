@@ -8,7 +8,7 @@
         <title>TurboTrend</title>
         <meta charset="utf-8" />
         <meta content="width=device-width, intial-scale=1" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="css/style.css?=1105" />
+        <link rel="stylesheet" type="text/css" href="css/style.css?=6789998212" />
 		<link rel="icon" type="image/png" href="media/turbo.png" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
     </head>
@@ -23,7 +23,7 @@
 			                <div class="nav">
                                 <a href="about.aspx">About</a>
 						        <a href="features.aspx">Features</a>
-						        <a href="faq.aspx">Blog</a>
+						        <a href="faq.aspx">FAQs</a>
 						        <a href="contact.aspx">Contact</a>
 						        <a href="login.aspx">Login</a>
 						        <a class="btnSignUp" href="signup.aspx">Sign Up</a>
@@ -40,7 +40,7 @@
                         <div class="footerNav">
                             <a href="about.aspx">About</a>
 						    <a href="features.aspx">Features</a>
-						    <a href="faq.aspx">Blog</a>
+						    <a href="faq.aspx">FAQs</a>
 						    <a href="contact.aspx">Contact</a>
 						    <a href="login.aspx">Login</a>
 						    <a class="btnSignUp" href="signup.aspx">Sign Up</a>
