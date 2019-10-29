@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InstagramScraper\Account.py" />
     <Content Include="InstagramScraper\chromedriver.exe" />
     <Content Include="InstagramScraper\Scraper.py" />
     <Content Include="userLayer\css\style.css" />
