@@ -69,14 +69,13 @@
     <Content Include="userLayer\features.aspx" />
     <Content Include="userLayer\login.aspx" />
     <Content Include="userLayer\match.aspx" />
+    <Content Include="userLayer\media\headerImage.jpg" />
+    <Content Include="userLayer\media\iPhone.jpg" />
     <Content Include="userLayer\signup.aspx" />
-    <Content Include="userLayer\blog.aspx" />
+    <Content Include="userLayer\faq.aspx" />
     <Content Include="userLayer\contact.aspx" />
     <Content Include="userLayer\about.aspx" />
     <Content Include="userLayer\index.aspx" />
-    <Content Include="userLayer\media\headerimage.jpg" />
-    <Content Include="userLayer\media\headerimage2.jpg" />
-    <Content Include="userLayer\media\headerimage3.jpg" />
     <Content Include="userLayer\media\turbo.png" />
     <Content Include="userLayer\media\TurboTrend_Logo-glow.png" />
     <Content Include="userLayer\media\TurboTrend_Logo-white.png" />
@@ -84,6 +83,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\AccountManager.cs" />
+    <Compile Include="Business Layer\EmailManager.cs" />
     <Compile Include="Data Access Layer\DatabaseConnection.cs" />
     <Compile Include="InstagramScraper\ScraperConnection.cs" />
     <Compile Include="Model\Account.cs" />
@@ -117,12 +118,12 @@
     <Compile Include="userLayer\signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userLayer\blog.aspx.cs">
-      <DependentUpon>blog.aspx</DependentUpon>
+    <Compile Include="userLayer\faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="userLayer\blog.aspx.designer.cs">
-      <DependentUpon>blog.aspx</DependentUpon>
+    <Compile Include="userLayer\faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
