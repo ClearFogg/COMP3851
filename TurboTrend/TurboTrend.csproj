@@ -65,8 +65,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InstagramScraper\Account.py" />
+    <Content Include="InstagramScraper\chromedriver.exe" />
+    <Content Include="InstagramScraper\Scraper.py" />
     <Content Include="userLayer\css\style.css" />
     <Content Include="userLayer\features.aspx" />
+    <Content Include="userLayer\forgotPassword.aspx" />
     <Content Include="userLayer\login.aspx" />
     <Content Include="userLayer\match.aspx" />
     <Content Include="userLayer\media\begin.jpg" />
@@ -88,6 +92,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\AccountManager.cs" />
+    <Compile Include="Business Layer\EmailManager.cs" />
     <Compile Include="Data Access Layer\DatabaseConnection.cs" />
     <Compile Include="InstagramScraper\ScraperConnection.cs" />
     <Compile Include="Model\Account.cs" />
@@ -99,6 +105,13 @@
     </Compile>
     <Compile Include="userLayer\features.aspx.designer.cs">
       <DependentUpon>features.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userLayer\forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userLayer\forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

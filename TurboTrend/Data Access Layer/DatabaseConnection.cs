@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using TurboTrend.InstagramScraper;
 using TurboTrend.Model;
 
 namespace TurboTrend.Business
@@ -13,7 +12,93 @@ namespace TurboTrend.Business
     {
         public DatabaseConnection() { }
 
-        private void InsertHashtagIntoDB(string input)
+        public int changePassword(string sPassword, string sEmail)
+        {
+            int iReturnCode = 0;
+
+            SqlConnection conn = new SqlConnection((new ProjectConfig().DBConnectionString));
+            using (SqlCommand cmd = new SqlCommand("sp_ChangeUserPassword"))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("@Email", sEmail);
+                cmd.Parameters.AddWithValue("@NewPword", sPassword);
+                cmd.Parameters.AddWithValue("@returnCode", iReturnCode);
+                var returnParameter = cmd.Parameters.Add("@returnCode", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                iReturnCode = Convert.ToInt32(returnParameter.Value);
+                conn.Close();
+            }
+
+            return iReturnCode;
+        }
+
+        public int createAccount(string sName, string sBusinessName, string sPassword, string sEmail)
+        {
+            SqlConnection conn = null;
+            int errorCode = -1;
+            try
+            {
+                conn = new SqlConnection((new ProjectConfig().DBConnectionString));
+
+                using (SqlCommand cmd = new SqlCommand("sp_CreateAccountAndBusiness"))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@aName", sName);
+                    cmd.Parameters.AddWithValue("@bName", sBusinessName);
+                    cmd.Parameters.AddWithValue("@pword", sPassword);
+                    cmd.Parameters.AddWithValue("@email", sEmail);
+                    cmd.Parameters.AddWithValue("@errorCode", errorCode);
+                    var returnParameter = cmd.Parameters.Add("@errorCode", SqlDbType.Int);
+                    returnParameter.Direction = ParameterDirection.ReturnValue;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    errorCode = Convert.ToInt32(returnParameter.Value);
+                    conn.Close();
+                }
+
+            }
+            //Checking if connection is still open, closing if it is.
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+
+            return errorCode;
+        }
+
+        public int loginUser(string sUsername, string sPassword)
+        {
+            int iReturnValue = -1;
+
+            SqlConnection conn = null;
+            conn = new SqlConnection((new ProjectConfig().DBConnectionString));
+            using (SqlCommand cmd = new SqlCommand("sp_verifyLogin"))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("@aName", sUsername);
+                cmd.Parameters.AddWithValue("@pword", sPassword);
+                cmd.Parameters.AddWithValue("@errorCode", iReturnValue);
+                var returnParameter = cmd.Parameters.Add("@errorCode", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                conn.Open();
+
+                cmd.ExecuteScalar();
+                iReturnValue = Convert.ToInt32(returnParameter.Value);
+                conn.Close();
+            }
+
+            return iReturnValue;
+        }
+
+        public void InsertHashtagIntoDB(string input)
         {
             SqlConnection conn = null;
             conn = new SqlConnection((new ProjectConfig().DBConnectionString));
