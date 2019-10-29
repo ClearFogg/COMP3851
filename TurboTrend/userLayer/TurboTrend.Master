@@ -23,7 +23,7 @@
 			                <div class="nav">
                                 <a href="about.aspx">About</a>
 						        <a href="features.aspx">Features</a>
-						        <a href="faq.aspx">Blog</a>
+						        <a href="faq.aspx">FAQs</a>
 						        <a href="contact.aspx">Contact</a>
                                 <asp:HyperLink ID="LoginOrAccount" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login"></asp:HyperLink>
                                 <asp:HyperLink ID="SignUpOrMatch" runat="server" style="background-color: #2e3486;padding: 1.2%;margin-left: 2%;margin-right: 2%;border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up"/>
@@ -40,7 +40,7 @@
                         <div class="footerNav">
                             <a href="about.aspx">About</a>
 						    <a href="features.aspx">Features</a>
-						    <a href="faq.aspx">Blog</a>
+						    <a href="faq.aspx">FAQs</a>
 						    <a href="contact.aspx">Contact</a>
                             <asp:HyperLink ID="LoginOrAccountSecond" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login"></asp:HyperLink>
                             <asp:HyperLink ID="SignUpOrMatchSecond" runat="server" style="background-color: #2e3486;padding: 1.2%;margin-left: 2%;margin-right: 2%;border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up"/>
