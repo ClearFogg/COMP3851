@@ -13,14 +13,15 @@ namespace TurboTrend.Business_Layer
 
         public AccountManager() { }
 
-        public int createAccount(string sName, string sPass, string sBusiness, string sEmail)
+        public int createAccount(string sName, string sPass, string sBusiness, string sEmail, string sPhone, string sIndustry)
         {
             int iReturnedValue = -1;
 
             string sHashedPWd = hashPword(sPass);
 
             DatabaseConnection db = new DatabaseConnection();
-            iReturnedValue = db.createAccount(sName, sBusiness, sHashedPWd, sEmail);
+
+            iReturnedValue = db.createAccount(sName, sBusiness, sHashedPWd, sEmail, sPhone, sIndustry);
 
             return iReturnedValue;
         }

@@ -35,7 +35,7 @@ namespace TurboTrend.Business
             return iReturnCode;
         }
 
-        public int createAccount(string sName, string sBusinessName, string sPassword, string sEmail)
+        public int createAccount(string sName, string sBusinessName, string sPassword, string sEmail, string sPhone, string sIndustry)
         {
             SqlConnection conn = null;
             int errorCode = -1;
@@ -51,6 +51,8 @@ namespace TurboTrend.Business
                     cmd.Parameters.AddWithValue("@bName", sBusinessName);
                     cmd.Parameters.AddWithValue("@pword", sPassword);
                     cmd.Parameters.AddWithValue("@email", sEmail);
+                    cmd.Parameters.AddWithValue("@phone", sPhone);
+                    cmd.Parameters.AddWithValue("@industry", sIndustry);
                     cmd.Parameters.AddWithValue("@errorCode", errorCode);
                     var returnParameter = cmd.Parameters.Add("@errorCode", SqlDbType.Int);
                     returnParameter.Direction = ParameterDirection.ReturnValue;
@@ -107,7 +109,7 @@ namespace TurboTrend.Business
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conn;
                 cmd.Parameters.AddWithValue("@hashtagtxt", input);
-                cmd.Parameters.AddWithValue("@businessName", HttpContext.Current.Session["businessName"].ToString());
+                cmd.Parameters.AddWithValue("@username", HttpContext.Current.Session["username"].ToString());
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -125,20 +127,20 @@ namespace TurboTrend.Business
             dt.Columns.Add("accountFollowing");
             dt.Columns.Add("accountPosts");
             dt.Columns.Add("engagementRate");
-            dt.Columns.Add("estatimatedCostPerPost");
+            dt.Columns.Add("estimatedCostPerPost");
             dt.Columns.Add("totalPostLast60Days");
 
             
 
 
-            for (int i = 0; i < 5; i++)// 5 is a temp number, web page needs to be coded to allow for more results?
+            for (int i = 0; i < 1; i++)// 5 is a temp number, web page needs to be coded to allow for more results?
             {
                 DataRow dataRow = dt.NewRow();
-                dataRow[0] = listAcc[i].accountName;
-                dataRow[1] = listAcc[i].accountUrl;
-                dataRow[2] = listAcc[i].accountFollowers;
-                dataRow[3] = listAcc[i].accountFollowing;
-                dataRow[4] = listAcc[i].accountPosts;
+                dataRow[0] = "cats";//listAcc[i].accountName;
+                dataRow[1] = "catsinstagram";//listAcc[i].accountUrl;
+                dataRow[2] = "34.5k";//listAcc[i].accountFollowers;
+                dataRow[3] = "1.2m";//listAcc[i].accountFollowing;
+                dataRow[4] = "134";//listAcc[i].accountPosts;
                 dataRow[5] = 99; // Engagement Rate, talk to Jeremy
                 dataRow[6] = 10; // Cost per post
                 dataRow[7] = 10; // Posts last 60 days

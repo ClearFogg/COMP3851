@@ -14,6 +14,22 @@
             <asp:Panel runat="server" CssClass="centerAlign">
             <asp:TextBox ID="hashtag" runat="server" placeholder="Search" autocomplete="off" class="form-control" style="width: 90%; margin-left:5%; margin-right:5%;"></asp:TextBox>
             <!--Insert checkboxes/sliders/inputs for search parameters here.-->
+            <asp:Label ID="lblEngagementRate" runat="server" Text="Filter by Engagement Rate"></asp:Label>
+            <asp:DropDownList ID="engagementRateFilter" runat="server">
+                <asp:ListItem Enabled="true" Text="Filter engagement rate..." Value="-1"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> 25" Value="25"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> 50" Value="50"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> 75" Value="75"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> 90" Value="90"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:Label ID="lblCostPerPost" runat="server" Text="Filter by Cost Per Post"></asp:Label>
+            <asp:DropDownList ID="costPerPost" runat="server">
+                <asp:ListItem Enabled="true" Text="Filter cost per post..." Value="-1"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> $100" Value="100"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> $500" Value="500"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> $1000" Value="1000"></asp:ListItem>
+                <asp:ListItem Enabled="true" Text="> $1500" Value="1500"></asp:ListItem>
+            </asp:DropDownList>
             <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" class="btnSignUp" Text="Search" style="float:right; margin-right:5%; color:white; margin-top: 2%;"/>
             </asp:Panel>
 			</div>
@@ -48,6 +64,21 @@
                                 <asp:TemplateField HeaderText="Account Posts">
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("accountPosts")  %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Account Engagement Rate">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("engagementRate")  %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Estimated Cost Per Post">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("estimatedCostPerPost")  %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Total Posts Last 60 Days">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("totalPostLast60Days")  %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

@@ -28,7 +28,7 @@ namespace TurboTrend.userLayer
         {
             AccountManager accMgr = new AccountManager();
 
-            int iAccountStatus = accMgr.createAccount(aName.Text, pword.Text, bName.Text, email.Text);
+            int iAccountStatus = accMgr.createAccount(aName.Text, pword.Text, bName.Text, email.Text, phone.Text, industry.Text);
 
             switch (iAccountStatus)
             {

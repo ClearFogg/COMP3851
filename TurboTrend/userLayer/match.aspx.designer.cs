@@ -40,6 +40,42 @@ namespace TurboTrend.userLayer {
         protected global::System.Web.UI.WebControls.TextBox hashtag;
         
         /// <summary>
+        /// lblEngagementRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEngagementRate;
+        
+        /// <summary>
+        /// engagementRateFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList engagementRateFilter;
+        
+        /// <summary>
+        /// lblCostPerPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostPerPost;
+        
+        /// <summary>
+        /// costPerPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList costPerPost;
+        
+        /// <summary>
         /// btnSearch control.
         /// </summary>
         /// <remarks>
