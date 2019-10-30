@@ -8,9 +8,12 @@
         <title>TurboTrend</title>
         <meta charset="utf-8" />
         <meta content="width=device-width, intial-scale=1" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="css/style.css?=6789998212" />
+        <link rel="stylesheet" type="text/css" href="css/style.css?=678999" />
 		<link rel="icon" type="image/png" href="media/turbo.png" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
+        
+
+
     </head>
 
     <body>
@@ -42,8 +45,8 @@
 						    <a href="features.aspx">Features</a>
 						    <a href="faq.aspx">FAQs</a>
 						    <a href="contact.aspx">Contact</a>
-                            <asp:HyperLink ID="LoginOrAccountSecond" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login"></asp:HyperLink>
-                            <asp:HyperLink ID="SignUpOrMatchSecond" runat="server" style="background-color: #2e3486;padding: 1.2%;margin-left: 2%;margin-right: 2%;border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up"/>
+                            <asp:HyperLink ID="LoginOrAccountSecond" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login" ></asp:HyperLink>
+                            <asp:HyperLink ID="SignUpOrMatchSecond" runat="server" style="background-color: #2e3486; padding: 1.2%; margin-left: 2%; margin-right: 2%; border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up" CssClass="footerMobile"/>
                         </div>
                     </div>
                 </div>

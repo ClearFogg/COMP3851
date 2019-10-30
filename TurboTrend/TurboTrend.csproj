@@ -75,11 +75,17 @@
     <Content Include="userLayer\match.aspx" />
     <Content Include="userLayer\media\begin.jpg" />
     <Content Include="userLayer\media\cactusCam.jpg" />
+    <Content Include="userLayer\media\clock.png" />
     <Content Include="userLayer\media\desktopPic.jpg" />
+    <Content Include="userLayer\media\dollars.png" />
+    <Content Include="userLayer\media\filter.png" />
     <Content Include="userLayer\media\headerImage.jpg" />
+    <Content Include="userLayer\media\headset.png" />
     <Content Include="userLayer\media\insta.jpg" />
     <Content Include="userLayer\media\instaStickers.jpg" />
     <Content Include="userLayer\media\iPhone.jpg" />
+    <Content Include="userLayer\media\magnifyingGlass.png" />
+    <Content Include="userLayer\media\turboIcon.png" />
     <Content Include="userLayer\signup.aspx" />
     <Content Include="userLayer\faq.aspx" />
     <Content Include="userLayer\contact.aspx" />

@@ -66,9 +66,10 @@
 
 .nav {
     text-align: right;
-    grid-column-start: 4;
+    grid-column-start: 3;
     grid-column-end: -2;
     margin-top: 12vh;
+    
 }
 
     .nav > a {
@@ -112,7 +113,7 @@
 
 .footerNav {
     text-align: right;
-    grid-column-start: 4;
+    grid-column-start: 3;
     grid-column-end: -2;
 }
 
@@ -144,6 +145,13 @@ h2 {
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 3%;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(2,0,36);
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .topRow {
@@ -178,11 +186,329 @@ h2 {
                   1px 1px #000000;
 }
 
+.homeText a:visited {
+    color: white;
+}
+
+.homeImageGrid {
+    background-position: center;
+    width: auto;
+    background-size: cover;
+}
+
+.homeImageGridDesktop {
+    background-position: center;
+    width: auto;
+    background-size: cover;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .textBox {
     width: 100%;
     height: 1.5rem;
     padding: 0.5%;
 }
+
+
+.collapsible {
+    background-color: #696eb8;
+    color: white;
+    cursor: pointer;
+    padding: 2%;
+    width: 96%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+    .active, .collapsible:hover {
+        background-color: #696eb8;
+    }
+
+    .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 1%;
+    }
+
+.active:after {
+    content: "\2212";
+}
+
+.faq {
+    padding: 0% 2%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    margin-bottom: 1%;
+}
+
+.featuresGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 1.3rem;
+}
+
+.feature {
+    width: 100%;
+    overflow: hidden; 
+    padding: 2%;
+    text-align: center;
+}
+
+
+
+
+@media screen and (min-width: 320px) {
+    .gradientFill {
+        background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(2,0,36,0.7) 35%, rgba(255,255,255,0) 100%);
+        max-height: 30vh;
+        position: relative;
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-template-columns: repeat(10, 10%);
+        grid-template-rows: 50% auto;
+    }
+
+    .logoLink {
+        grid-row-start: 1;
+    }
+
+    .nav {
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+        .nav > a {
+            margin: 1%;
+            font-size: 1rem;
+        }
+
+    .mainGrid {
+        margin-top: -8rem;
+        padding: 1rem 2rem 1rem 2rem;
+    }
+
+    .topRow {
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 0.8rem;
+        overflow: hidden;
+        margin-top: 0.8rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .homeImageGridDesktop {
+        background-position: center;
+        width: auto;
+        background-size: cover;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+
+    .bottomRow {
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 0.8rem;
+        overflow: hidden;
+        margin: 0.8rem 0.5rem 0.8rem;
+        
+    }
+
+    .footer {
+        background-color: #5b4774;
+        height: 7rem;
+        display: inline-grid;
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-template-columns: 1;
+        margin-bottom: 0;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    .logoLinkFooter {
+        align-items: center;
+    }
+
+    .logoFooter {
+        height: 5rem;
+    }
+
+    .footerNav {
+        visibility: hidden;
+    }
+
+        .footerNav > a {
+            padding-left: 2%;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 0;
+        }
+
+    .footerMobile {
+        visibility: visible;
+        text-align: right;
+        grid-column-start: 3;
+        grid-column-end: -2;
+        vertical-align: middle;
+    }
+
+    .featuresGrid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 1.3rem;
+    }
+
+    .feature {
+        width: 100%;
+        overflow: hidden;
+        padding: 2%;
+        text-align: center;
+    }
+}
+
+ @media screen and (max-width: 768px) {
+    .mainGrid {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 438px) {
+    .footerNav {
+        text-align: right;
+        grid-column-start: 4;
+        grid-column-end: -2;
+    }
+}
+
+
+@media screen and (min-width: 760px) {
+    .gradientFill {
+        background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(2,0,36,0.7) 35%, rgba(255,255,255,0) 100%);
+        max-height: 30vh;
+        position: relative;
+        display: inline-grid;
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-template-columns: repeat(10, 10%);
+    }
+
+    .logoLink {
+        margin-top: 20%;
+        grid-column-start: 2;
+    }
+
+    .logo {
+        margin: 1%;
+        height: 20vh;
+    }
+
+    .nav {
+        text-align: right;
+        grid-column-start: 3;
+        grid-column-end: -2;
+        margin-top: 12vh;
+        grid-row-start: auto;
+    }
+
+        .nav > a {
+            padding-left: 2%;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin: 2%;
+        }
+
+    .mainGrid {
+        margin-top: -10rem;
+        padding: 1.5rem 4rem 2rem 4rem;
+    }
+
+    .topRow {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        margin: 0;
+    }
+
+    .bottomRow {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        margin: 0;
+    }
+
+    .footer {
+        background-color: #5b4774;
+        height: 7rem;
+        display: inline-grid;
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-template-columns: repeat(10, 10%);
+        margin-bottom: 0;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    .logoLinkFooter {
+        grid-column-start: 2;
+    }
+
+    .logoFooter {
+        height: 5rem;
+    }
+
+    .footerNav {
+        text-align: right;
+        grid-column-start: 3;
+        grid-column-end: -2;
+        visibility: visible;
+    }
+
+        .footerNav > a {
+            padding-left: 2%;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 2%;
+        }
+
+    .featuresGrid {
+        display: inline-grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 1.3rem;
+    }
+
+    .feature {
+        width: 100%;
+        overflow: hidden;
+        padding: 2%;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 992) {
+    
+}
+
+
 
 /*nav {
     text-align: right;
