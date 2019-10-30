@@ -11,7 +11,7 @@ namespace TurboTrend.userLayer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["businessName"] != null)
+            if (Session["username"] != null)
             {
                 LoginOrAccount.Text = "Account";
                 LoginOrAccountSecond.Text = "Account";

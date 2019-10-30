@@ -15,7 +15,7 @@ namespace TurboTrend.userLayer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["businessName"] == null)
+            if (Session["username"] == null)
             {
                 Response.Redirect("login.aspx");
             }

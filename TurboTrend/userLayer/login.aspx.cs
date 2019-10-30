@@ -35,7 +35,7 @@ namespace TurboTrend.userLayer
                     LoginMsg.Text = "Password is incorrect";
                     break;
                 default:
-                    Session["businessName"] = usernameBox.Text;
+                    Session["userName"] = usernameBox.Text;
                     Response.Redirect("~/userLayer/index.aspx");
                     break;
             }
