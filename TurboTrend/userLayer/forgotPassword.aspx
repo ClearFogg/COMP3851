@@ -5,8 +5,8 @@
         <br />
         <div>
             <h2>Email:</h2>
-            <asp:TextBox ID="emailBox" runat="server" CssClass="form-control" placeholder="Email Address"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="emailRequired" runat="server" ControlToValidate="emailBox" Display="Dynamic" ErrorMessage="<br /><br />An email address is required."></asp:RequiredFieldValidator>
+            <asp:TextBox ID="emailBox" runat="server" placeholder="Email Address" CssClass="textBox" style="margin-bottom: 2rem;"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="emailRequired" runat="server" ControlToValidate="emailBox"  Display="Dynamic" ErrorMessage="<br /><br />An email address is required." ></asp:RequiredFieldValidator>
         </div>
         <br />
         <asp:Button ID="forgotPwd" CssClass="btnSignUp" runat="server" Text="Send Reset Link" OnClick="submitButton_Click" />
@@ -21,17 +21,17 @@
         <br />
         <div>
             <h3>New Password</h3>
-            <asp:TextBox ID="NewPassword" runat="server"></asp:TextBox>
+            <asp:TextBox ID="NewPassword" runat="server" CssClass="textBox"></asp:TextBox>
             <br />
         </div>
         <div>
             <h3>Confirm New Password</h3>
-            <asp:TextBox ID="confirmPassword" runat="server"></asp:TextBox>
+            <asp:TextBox ID="confirmPassword" runat="server" CssClass="textBox"></asp:TextBox>
             <br />
         </div>
         <div>
             <asp:RequiredFieldValidator runat="server" Display="Dynamic" ID="required" ControlToValidate="NewPassword" ErrorMessage="Please enter a new password<br />"></asp:RequiredFieldValidator>
-            <asp:CompareValidator runat="server" Display="Dynamic" ID="makeSureSame" ErrorMessage="You have not entered the same password" ControlToValidate="NewPassword" ControlToCompare="confirmPassword" Type="String" Operator="Equal"    ></asp:CompareValidator>
+            <asp:CompareValidator runat="server" Display="Dynamic" ID="makeSureSame" ErrorMessage="You have not entered the same password" ControlToValidate="NewPassword" ControlToCompare="confirmPassword" Type="String" Operator="Equal"></asp:CompareValidator>
         </div>
         <br />
         <asp:Button ID="SubmitNewPW" runat="server" CssClass="btnSignUp" OnClick="SubmitNewPW_Click" Text="Change Password" />
