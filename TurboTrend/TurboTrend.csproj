@@ -97,6 +97,7 @@
     <Compile Include="Data Access Layer\DatabaseConnection.cs" />
     <Compile Include="InstagramScraper\ScraperConnection.cs" />
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\SearchParameters.cs" />
     <Compile Include="ProjectConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userLayer\features.aspx.cs">

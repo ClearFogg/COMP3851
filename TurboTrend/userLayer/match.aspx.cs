@@ -27,7 +27,7 @@ namespace TurboTrend.userLayer
         {
             ScraperConnection scraper = new ScraperConnection();
             DataTable dTable = scraper.interpretHashTagAndSearch(hashtag.Text);
-
+            
             grdCategories.DataSource = dTable;
             grdCategories.DataBind();
 
