@@ -50,6 +50,21 @@
                                         <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("accountPosts")  %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Account Engagement Rate">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("engagementRate")  %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Estimated Cost Per Post">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("estimatedCostPerPost")  %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Total Posts Last 60 Days">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("totalPostLast60Days")  %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                             <AlternatingRowStyle CssClass="altRow" />
                         </asp:GridView>
