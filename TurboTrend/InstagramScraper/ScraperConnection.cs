@@ -53,7 +53,7 @@ namespace TurboTrend.InstagramScraper
 
         private List<string> checkInput(string sCheck, string sInput)
         {
-            List<string> sReturnArray = new List<string>;
+            List<string> sReturnArray = new List<string>();
 
             if (sInput.Contains(sCheck))
             {
