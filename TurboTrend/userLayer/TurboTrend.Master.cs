@@ -11,7 +11,18 @@ namespace TurboTrend.userLayer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] != null)
+            {
+                LoginOrAccount.Text = "Account";
+                LoginOrAccountSecond.Text = "Account";
+                LoginOrAccount.NavigateUrl = "~/userLayer/account.aspx";
+                LoginOrAccountSecond.NavigateUrl = "~/userLayer/account.aspx";
 
+                SignUpOrMatch.Text = "Search";
+                SignUpOrMatchSecond.Text = "Search";
+                SignUpOrMatch.NavigateUrl = "~/userLayer/match.aspx";
+                SignUpOrMatchSecond.NavigateUrl = "~/userLayer/match.aspx";
+            }
         }
     }
 }

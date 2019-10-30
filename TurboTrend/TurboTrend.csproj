@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,34 +65,45 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="InstagramScraper\Account.py" />
+    <Content Include="InstagramScraper\chromedriver.exe" />
+    <Content Include="InstagramScraper\Scraper.py" />
     <Content Include="userLayer\css\style.css" />
     <Content Include="userLayer\features.aspx" />
+    <Content Include="userLayer\forgotPassword.aspx" />
     <Content Include="userLayer\login.aspx" />
     <Content Include="userLayer\match.aspx" />
+    <Content Include="userLayer\media\begin.jpg" />
+    <Content Include="userLayer\media\cactusCam.jpg" />
+    <Content Include="userLayer\media\clock.png" />
+    <Content Include="userLayer\media\desktopPic.jpg" />
+    <Content Include="userLayer\media\dollars.png" />
+    <Content Include="userLayer\media\filter.png" />
+    <Content Include="userLayer\media\headerImage.jpg" />
+    <Content Include="userLayer\media\headset.png" />
+    <Content Include="userLayer\media\insta.jpg" />
+    <Content Include="userLayer\media\instaStickers.jpg" />
+    <Content Include="userLayer\media\iPhone.jpg" />
+    <Content Include="userLayer\media\magnifyingGlass.png" />
+    <Content Include="userLayer\media\turboIcon.png" />
     <Content Include="userLayer\signup.aspx" />
-    <Content Include="userLayer\blog.aspx" />
+    <Content Include="userLayer\faq.aspx" />
     <Content Include="userLayer\contact.aspx" />
     <Content Include="userLayer\about.aspx" />
     <Content Include="userLayer\index.aspx" />
-    <Content Include="userLayer\media\headerimage.jpg" />
-    <Content Include="userLayer\media\headerimage2.jpg" />
-    <Content Include="userLayer\media\headerimage3.jpg" />
     <Content Include="userLayer\media\turbo.png" />
     <Content Include="userLayer\media\TurboTrend_Logo-glow.png" />
     <Content Include="userLayer\media\TurboTrend_Logo-white.png" />
     <Content Include="userLayer\media\TurboTrend_Logo.png" />
-    <Content Include="userLayer\Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\DatabaseConnection.cs" />
+    <Compile Include="Business Layer\AccountManager.cs" />
+    <Compile Include="Business Layer\EmailManager.cs" />
+    <Compile Include="Data Access Layer\DatabaseConnection.cs" />
     <Compile Include="InstagramScraper\ScraperConnection.cs" />
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\SearchParameters.cs" />
     <Compile Include="ProjectConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userLayer\features.aspx.cs">
@@ -98,6 +112,13 @@
     </Compile>
     <Compile Include="userLayer\features.aspx.designer.cs">
       <DependentUpon>features.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userLayer\forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userLayer\forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -120,12 +141,12 @@
     <Compile Include="userLayer\signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userLayer\blog.aspx.cs">
-      <DependentUpon>blog.aspx</DependentUpon>
+    <Compile Include="userLayer\faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="userLayer\blog.aspx.designer.cs">
-      <DependentUpon>blog.aspx</DependentUpon>
+    <Compile Include="userLayer\faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
@@ -148,13 +169,6 @@
     <Compile Include="userLayer\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userLayer\Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="userLayer\Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="userLayer\TurboTrend.Master.cs">
       <DependentUpon>TurboTrend.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,8 +178,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <Content Include="userLayer\TurboTrend.Master" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

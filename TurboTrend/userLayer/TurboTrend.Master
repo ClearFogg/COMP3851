@@ -8,47 +8,49 @@
         <title>TurboTrend</title>
         <meta charset="utf-8" />
         <meta content="width=device-width, intial-scale=1" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="css/style.css?=1105" />
+        <link rel="stylesheet" type="text/css" href="css/style.css?=678999" />
 		<link rel="icon" type="image/png" href="media/turbo.png" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
+        
+
+
     </head>
 
     <body>
         <form id="form1" runat="server">
-	        <div class="header">
-			<div class="gradientFill">
-				<div class="headerContent"> <!--Photo by Jakob Owens on Unsplash - https://unsplash.com/photos/WDaO5vw1oYU -->
-					<a href="home.aspx"><img src="media/TurboTrend_Logo-glow.png" width="55%" height="auto" style="margin: 5% 0% 0% 0%;" /></a>
-					<nav>
-						<a href="about.aspx">About</a>
-						<a href="features.aspx">Features</a>
-						<a href="blog.aspx">Blog</a>
-						<a href="contact.aspx">Contact</a>
-						<a href="login.aspx">Login</a>
-						<a class="btnSignUp" href="signup.aspx">Sign Up</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-		<div class="mainBlock">
-            <asp:ContentPlaceHolder ID="mainContent" runat="server">
-
-            </asp:ContentPlaceHolder>
-		</div>
-            <div class="footerContent">
-			    <div class="footer">
-				    <a href="index.aspx"><img src="media/TurboTrend_Logo-white.png" width="30%" height="auto" style="margin: 2% 0% 2% 0%;" /></a>
-				    <nav>
-					    <a class="footerNav" href="about.aspx">About</a>
-					    <a class="footerNav" href="features.aspx">Features</a>
-					    <a class="footerNav" href="pricing.aspx">Pricing</a> 
-					    <a class="footerNav" href="blog.aspx">Blog</a>
-					    <a class="footerNav" href="contact.aspx">Contact</a>
-					    <a class="footerNav" href="login.aspx">Login</a>
-					    <a class="footerNav btnSignUp" href="signup.aspx">Sign Up</a>
-				    </nav>
-			    </div>
-		    </div>
+            <div class="content">
+	            <div class="headerGrid">
+    			    <div class="header"> <!--Photo by Jakob Owens on Unsplash - https://unsplash.com/photos/WDaO5vw1oYU -->
+                        <div class="gradientFill">
+                            <a href="index.aspx" class="logoLink"><img src="media/TurboTrend_Logo-glow.png" alt="TurboTrend Logo" class="logo" /></a>
+			                <div class="nav">
+                                <a href="about.aspx">About</a>
+						        <a href="features.aspx">Features</a>
+						        <a href="faq.aspx">FAQs</a>
+						        <a href="contact.aspx">Contact</a>
+                                <asp:HyperLink ID="LoginOrAccount" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login"></asp:HyperLink>
+                                <asp:HyperLink ID="SignUpOrMatch" runat="server" style="background-color: #2e3486;padding: 1.2%;margin-left: 2%;margin-right: 2%;border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up"/>
+			                </div>
+                        </div>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    <!-- Page Content -->
+                </asp:ContentPlaceHolder>
+                <div class="footerGrid">
+                    <div class="footer">
+                        <a href="index.aspx" class="logoLinkFooter"><img src="media/TurboTrend_Logo-white.png" alt="TurboTrend Logo" class="logoFooter" /></a>
+                        <div class="footerNav">
+                            <a href="about.aspx">About</a>
+						    <a href="features.aspx">Features</a>
+						    <a href="faq.aspx">FAQs</a>
+						    <a href="contact.aspx">Contact</a>
+                            <asp:HyperLink ID="LoginOrAccountSecond" runat="server" NavigateUrl="~/userLayer/login.aspx" Text="Login" ></asp:HyperLink>
+                            <asp:HyperLink ID="SignUpOrMatchSecond" runat="server" style="background-color: #2e3486; padding: 1.2%; margin-left: 2%; margin-right: 2%; border-radius: 8px;" NavigateUrl="~/userLayer/signup.aspx" Text="Sign Up" CssClass="footerMobile"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form> 
     </body>
 </html>

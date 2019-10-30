@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using TurboTrend.InstagramScraper;
@@ -12,7 +13,23 @@ namespace TurboTrend.Business
     {
         public DatabaseConnection() { }
 
-        private void InsertInfluencerIntoDB()
+        public void InsertHashtagIntoDB(string input, string businessName)
+        {
+            SqlConnection conn = null;
+            conn = new SqlConnection(@"Server=DESKTOP-3S0MBR6\SQLEXPRESS;DataBase=TurboTrend;Integrated Security=SSPI");
+            using (SqlCommand cmd = new SqlCommand("sp_InsertHashtag"))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("@hashtagtxt", input);
+                cmd.Parameters.AddWithValue("@businessName", businessName);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        public void InsertInfluencerIntoDB()
         {
             ScraperConnection scraper = new ScraperConnection();
             Account[] listAcc = scraper.accList;
@@ -28,9 +45,6 @@ namespace TurboTrend.Business
                 string[] row = { listAcc[i].accountName, listAcc[i].accountUrl, listAcc[i].accountFollowers, listAcc[i].accountFollowing, listAcc[i].accountPosts };
                 dt.Rows.Add(row);
             }
-
-            grdCategories.DataSource = dt;
-            grdCategories.DataBind();
 
             SqlConnection conn = null;
             SqlDataReader rdr = null;

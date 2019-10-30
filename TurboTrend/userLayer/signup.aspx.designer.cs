@@ -13,6 +13,15 @@ namespace TurboTrend.userLayer {
     public partial class signup {
         
         /// <summary>
+        /// pageContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pageContent;
+        
+        /// <summary>
         /// aName control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,22 @@ namespace TurboTrend.userLayer {
         protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
-        /// AccountMsg control.
+        /// phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AccountMsg;
+        protected global::System.Web.UI.WebControls.TextBox phone;
+        
+        /// <summary>
+        /// industry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox industry;
         
         /// <summary>
         /// btnSubmit control.
@@ -65,5 +83,14 @@ namespace TurboTrend.userLayer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
+        /// AccountMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AccountMsg;
     }
 }
