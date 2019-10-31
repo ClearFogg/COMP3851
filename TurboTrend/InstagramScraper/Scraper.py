@@ -15,7 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-os.chdir(r"C:\Users\Nick\Source\Repos\COMP3851\TurboTrend\InstagramScraper")
+os.chdir(r"C:\Users\j-fog\Desktop\TurboTrend\TurboTrend\InstagramScraper")
 
 # Initial user agent
 Options = webdriver.ChromeOptions()
@@ -24,7 +24,7 @@ Options.add_experimental_option("prefs", {"profile.default_content_settings.cook
 driver = webdriver.Chrome(options=Options)
 
 accPostNo = 10
-hashPostNo = 200
+hashPostNo = 10
 numOfScrolls = 1
 
 
