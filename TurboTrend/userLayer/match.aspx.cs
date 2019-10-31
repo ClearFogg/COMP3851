@@ -13,23 +13,42 @@ namespace TurboTrend.userLayer
 {
     public partial class match : System.Web.UI.Page
     {
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    if (Session["username"] == null)
-        //    {
-        //        Response.Redirect("login.aspx");
-        //    }
-        //}
+        SearchParameters sP = new SearchParameters();
+        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["username"] == null)
+            {
+                Response.Redirect("login.aspx");
+           }
+        }
 
 
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            btnSearch.Enabled = false;
+
+            sP.engagementRate = Convert.ToDouble(engagementRateFilter.SelectedValue);
+
             ScraperConnection scraper = new ScraperConnection();
             DataTable dTable = scraper.interpretHashTagAndSearch(hashtag.Text);
-            
+
+            for (int i = dTable.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow dr = dTable.Rows[i];
+
+                if (Convert.ToDouble(dr["engagementRate"]) > sP.engagementRate)
+                {
+                    dr.Delete();
+                }
+            }
+            dTable.AcceptChanges();
+
             grdCategories.DataSource = dTable;
             grdCategories.DataBind();
+
+            btnSearch.Enabled = true;
 
         }
 

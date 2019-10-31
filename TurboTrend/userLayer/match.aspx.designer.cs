@@ -94,22 +94,22 @@ namespace TurboTrend.userLayer {
         protected global::System.Web.UI.WebControls.DropDownList totalFollowers;
         
         /// <summary>
-        /// totalPost60Days control.
+        /// lbltotalPostPast60Days control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label totalPost60Days;
+        protected global::System.Web.UI.WebControls.Label lbltotalPostPast60Days;
         
         /// <summary>
-        /// totalPost60days control.
+        /// totalPostPast60Days control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList totalPost60days;
+        protected global::System.Web.UI.WebControls.DropDownList totalPostPast60Days;
         
         /// <summary>
         /// btnSearch control.

@@ -13,10 +13,11 @@ namespace TurboTrend
 
     public class ProjectConfig
     {
+        public readonly string libBatLocation = @"C:\Users\j-fog\Desktop\TurboTrend\TurboTrend\InstagramScraper\InstallRequiredLibraries.bat";
         public readonly string PythonLocation = @"C:\Users\j-fog\AppData\Local\Programs\Python\Python38-32\python.exe";
         public readonly string ScraperLocation = @"C:\Users\j-fog\Desktop\TurboTrend\TurboTrend\InstagramScraper\Scraper.py";
         public readonly string DBConnectionString = @"Server=DESKTOP-UOOEQ82\SQLEXPRESS;DataBase=TurboTrend;Integrated Security=SSPI";
 
-        public readonly int MaxSearchTerms = 6;
+        public readonly int MaxSearchTerms = 3;
     }
 }
