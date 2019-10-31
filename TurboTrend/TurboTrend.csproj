@@ -87,6 +87,7 @@
     <Content Include="userLayer\media\iPhone.jpg" />
     <Content Include="userLayer\media\magnifyingGlass.png" />
     <Content Include="userLayer\media\turboIcon.png" />
+    <Content Include="userLayer\redirectAcc.aspx" />
     <Content Include="userLayer\signup.aspx" />
     <Content Include="userLayer\faq.aspx" />
     <Content Include="userLayer\contact.aspx" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="userLayer\match.aspx.designer.cs">
       <DependentUpon>match.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userLayer\redirectAcc.aspx.cs">
+      <DependentUpon>redirectAcc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userLayer\redirectAcc.aspx.designer.cs">
+      <DependentUpon>redirectAcc.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLayer\signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>

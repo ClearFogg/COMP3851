@@ -25,7 +25,7 @@ driver = webdriver.Chrome(options=Options)
 
 accPostNo = 10
 hashPostNo = 10
-numOfScrolls = 1
+numOfScrolls = 3
 
 
 def replace_char(text):
@@ -43,6 +43,8 @@ def get_posts(url):
 
     try:
         for x in range(numOfScrolls):
+            if len(posts) == 15:
+                break
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
             time.sleep(1)
@@ -53,12 +55,11 @@ def get_posts(url):
                 link = link.find_element_by_tag_name('a')
                 element = link.get_attribute('href')
 
-                if element not in posts:
+                if element not in posts and len(posts) != 15:
                     posts.append(element)
 
                 else:
                     pass
-
         # If the page returns 0 results, there must be an error or failure to connect. Quit the web application.
         if len(posts) == 0:
             driver.quit()

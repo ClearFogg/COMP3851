@@ -76,42 +76,6 @@ namespace TurboTrend.userLayer {
         protected global::System.Web.UI.WebControls.DropDownList costPerPost;
         
         /// <summary>
-        /// lblTotalFollowers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalFollowers;
-        
-        /// <summary>
-        /// totalFollowers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList totalFollowers;
-        
-        /// <summary>
-        /// totalPost60Days control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label totalPost60Days;
-        
-        /// <summary>
-        /// totalPost60days control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList totalPost60days;
-        
-        /// <summary>
         /// btnSearch control.
         /// </summary>
         /// <remarks>
