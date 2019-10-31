@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/userLayer/TurboTrend.Master" AutoEventWireup="true" CodeBehind="forgotPassword.aspx.cs" Inherits="TurboTrend.userLayer.forgotPassword" %>
+﻿c<%@ Page Title="" Language="C#" MasterPageFile="~/userLayer/TurboTrend.Master" AutoEventWireup="true" CodeBehind="forgotPassword.aspx.cs" Inherits="TurboTrend.userLayer.forgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContent" runat="server">
     <asp:Panel ID="ForgotPassword" runat="server" CssClass="mainGrid">
         <h1>Forgot Password</h1>
