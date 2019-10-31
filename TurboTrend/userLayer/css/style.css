@@ -186,7 +186,7 @@ h3 {
                   1px 1px #000000;
 }
 
-.homeText a:visited {
+.homeText a:visited, .homeText a:hover, .homeText a:active {
     color: white;
 }
 
