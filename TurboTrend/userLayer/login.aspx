@@ -14,7 +14,7 @@
         </div>
         <asp:Label ID="LoginMsg" runat="server" Text=""></asp:Label>
         <br />
-        <asp:Button ID="btnSubmit" class="btnSignUp" runat="server" Text="Continue" OnClick="btnSubmit_OnClick" style="font-size: 1.2rem; margin: 0;" />
+        <asp:Button ID="btnSubmit" class="btnSignUp" runat="server" Text="Continue" OnClick="btnSubmit_OnClick" style="font-size: 1.2rem; margin: 0; width: 100%" />
         <br />
         <br />
     </div>
