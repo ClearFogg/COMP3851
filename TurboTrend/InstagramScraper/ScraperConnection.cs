@@ -101,14 +101,14 @@ namespace TurboTrend.InstagramScraper
             try
             {
                 // Formats the hashtag array to the correct format for the python script
-                // The correct format is "hashtag, hashtag, hashtag"
+                // The correct format is "hashtag,hashtag,hashtag"
 
                 string sHashes = "";
                 for (int i = 0; i < sHashtags.Length; i++)
                 {
                     if (i < sHashtags.Length - 1)
                     {
-                        sHashes += sHashtags[i] + ", ";
+                        sHashes += sHashtags[i] + ",";
                     }
                     else
                     {
@@ -120,7 +120,7 @@ namespace TurboTrend.InstagramScraper
                 ProjectConfig settings = new ProjectConfig();
 
                 Process proc = new Process();
-                proc.StartInfo.FileName = settings.PythonLocation;
+                proc.StartInfo.FileName = "python";
                 proc.StartInfo.Arguments = string.Format("{0} {1}", settings.ScraperLocation, sHashes);
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.UseShellExecute = false;
