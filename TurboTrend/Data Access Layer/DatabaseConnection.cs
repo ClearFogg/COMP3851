@@ -156,11 +156,11 @@ namespace TurboTrend.Business
             for (int i = 0; i < 1; i++)// 5 is a temp number, web page needs to be coded to allow for more results?
             {
                 DataRow dataRow = dt.NewRow();
-                dataRow[0] = "cats";//listAcc[i].accountName;
-                dataRow[1] = "catsinstagram";//listAcc[i].accountUrl;
-                dataRow[2] = "34.5k";//listAcc[i].accountFollowers;
-                dataRow[3] = "1.2m";//listAcc[i].accountFollowing;
-                dataRow[4] = "134";//listAcc[i].accountPosts;
+                dataRow[0] = listAcc[i].accountName;
+                dataRow[1] = listAcc[i].accountUrl;
+                dataRow[2] = listAcc[i].accountFollowers;
+                dataRow[3] = listAcc[i].accountFollowing;
+                dataRow[4] = listAcc[i].accountPosts;
                 dataRow[5] = 99; // Engagement Rate, talk to Jeremy
                 dataRow[6] = 10; // Cost per post
                 dataRow[7] = 10; // Posts last 60 days
