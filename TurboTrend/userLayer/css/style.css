@@ -379,6 +379,22 @@ h3 {
         padding: 2%;
         text-align: center;
     }
+
+    .aboutColumns {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        align-items: center;
+    }
+
+    .btnPwReset {
+        width: 100%;
+        background-color: #2e3486;
+        padding: 1.5%;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        color: white;
+    }
 }
 
  @media screen and (max-width: 768px) {
@@ -487,6 +503,12 @@ h3 {
             margin: 2%;
         }
 
+    .aboutColumns {
+        display: inline-grid;
+        grid-template-columns: 40% 60%;
+        align-items: center;
+    }
+
     .featuresGrid {
         display: inline-grid;
         grid-template-columns: repeat(3, auto);
@@ -502,6 +524,14 @@ h3 {
         text-align: center;
     }
 
+    .btnPwReset {
+        width: 30%;
+        background-color: #2e3486;
+        padding: 1.5%;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        color: white;
+    }
 }
 
 @media screen and (min-width: 992) {

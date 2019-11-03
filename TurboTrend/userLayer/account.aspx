@@ -1,17 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/userLayer/TurboTrend.Master" AutoEventWireup="true" CodeBehind="account.aspx.cs" Inherits="TurboTrend.userLayer.account" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContent" runat="server">
     <div class="mainGrid">
+        <h1>Your Account</h1>
         <div>
-            <h3>Business Name</h3>
+            <h2 style="text-align: left;">Business Name:</h2>
             <asp:Label runat="server" ID="businessName"></asp:Label>
         </div>
+        <br />
         <div>
-            <h3>Account Email</h3>
+            <h2 style="text-align: left;">Email Address:</h2>
             <asp:Label runat="server" ID="accEmail"></asp:Label>
         </div>
+        <br />
         <div>
-            <h3>Change Password</h3>
-            <asp:Button runat="server" ID="changePasswordButton" OnClick="changePasswordButton_Click" />
+            <h2 style="text-align: left;">Change Password:</h2>
+            <asp:Button runat="server" ID="changePasswordButton" OnClick="changePasswordButton_Click" class="btnPwReset" Text="Reset Now" />
         </div>
     </div>
 </asp:Content>
