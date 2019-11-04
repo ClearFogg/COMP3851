@@ -168,7 +168,7 @@ namespace TurboTrend.Business
                 dataRow[3] = listAcc[i].accountFollowing;
                 dataRow[4] = listAcc[i].accountPosts;
                 dataRow[5] = 99; // Engagement Rate, talk to Jeremy
-                dataRow[6] = 10; // Cost per post
+                dataRow[6] = Math.Round(int.Parse(listAcc[i].accountFollowers) * 0.0005); // Cost per post
                 dataRow[7] = 10; // Posts last 60 days
                 tempTable.Rows.Add(dataRow);
 
