@@ -15,7 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-os.chdir(r"\Users\j-fog\Desktop\TurboTrend\TurboTrend\InstagramScraper")
+os.chdir(r"\Users\Nick\Source\Repos\COMP3851\TurboTrend\InstagramScraper")
 
 # Initial user agent
 Options = webdriver.ChromeOptions()
@@ -23,8 +23,8 @@ Options.add_argument("headless")
 Options.add_experimental_option("prefs", {"profile.default_content_settings.cookies": 2})
 driver = webdriver.Chrome(options=Options)
 
-accPostNo = 10
-hashPostNo = 200
+accPostNo = 3
+hashPostNo = 5
 numOfScrolls = 1
 
 
