@@ -34,6 +34,7 @@
                         </div>
                     </div>
                 </div>
+                <asp:ScriptManager runat="server" ID="ScriptManager1"></asp:ScriptManager>
                 <asp:ContentPlaceHolder ID="mainContent" runat="server">
                     <!-- Page Content -->
                 </asp:ContentPlaceHolder>

@@ -166,44 +166,52 @@ namespace TurboTrend.InstagramScraper
             }
 
             List<Account> accHolder = new List<Account>();
+            string sAccountNamesAdded = "";
             for (int i = 0; i < tempList.Count; i += 4)
             {
                 // The information is outputted by Python in the following format:
                 // /AccountURL/Followers/Following/Comments - We use this information to extract our data.
+                string compareName = tempList[i].Substring("https://www.instagram.com/".Length);
 
-                Account acTemp = new Account();
-                acTemp.accountUrl = tempList[i];
-                acTemp.accountName = tempList[i].Substring("https://www.instagram.com/".Length);
-                acTemp.accountFollowers = numConverter(tempList[i + 1]);
-                acTemp.accountFollowing = numConverter(tempList[i + 2]);
-                acTemp.accountPosts = numConverter(tempList[i + 3]);
+                if (!sAccountNamesAdded.Contains(compareName))
+                {
+                    Account acTemp = new Account();
+                    acTemp.accountUrl = tempList[i];
+                    acTemp.accountName = compareName;
+                    acTemp.accountFollowers = numConverter(tempList[i + 1]);
+                    acTemp.accountFollowing = numConverter(tempList[i + 2]);
+                    acTemp.accountPosts = numConverter(tempList[i + 3]);
+                    accHolder.Add(acTemp);
 
-                accHolder.Add(acTemp);
+                    sAccountNamesAdded += compareName + ",";
+                }
             }
 
             accList = accHolder.ToArray();
         }
 
-        private string numConverter (string s)
+        private string numConverter(string inputString)
         {
-            //Removing the letter at the end of the larger abbreviated numbers.
-            //Isolating the charater to a variable to be checked later.
-            string c = s.Substring(s.Length - 1, 1);
-            //Removing both commas and fullstops from within the string.
-            s = s.Replace(",", "");
-            s = s.Replace(".", "");
-            //If the number is abbreviated with a k, firstly remove the k with Substring, then multiple by 1000 and convert back to a string. 
-            if (c == "k")
+            if (!inputString.Contains("k") & !inputString.Contains("m"))
             {
-                s = (Convert.ToInt32(s.Substring(0, s.Length - 1)) * 1000).ToString();
-            }
-            //If the number is abbreviated with a m, firstly remove the m with Substring, then multiple by 1000000 and convert back to a string. 
-            else if (c == "m")
-            {
-                s = (Convert.ToInt32(s.Substring(0, s.Length - 1)) * 1000000).ToString();
+                return inputString.Replace(",", "");
             }
 
-            return s;
+            //Replaces commas with a ., as the number is converted to a double and multiplied from there.
+            inputString = inputString.Replace(",", ".");
+
+            if (inputString.Contains('k'))
+            {
+                inputString = (Convert.ToDouble(inputString.Substring(0, inputString.IndexOf("k"))) * 1000).ToString();
+            }
+
+            //If the number is abbreviated with a m, firstly remove the m with Substring, then multiple by 1000000 and convert back to a string. 
+            else if (inputString.Contains('m'))
+            {
+                inputString = (Convert.ToDouble(inputString.Substring(0, inputString.IndexOf("m"))) * 1000000).ToString();
+            }
+
+            return inputString;
         }
     }
 }
