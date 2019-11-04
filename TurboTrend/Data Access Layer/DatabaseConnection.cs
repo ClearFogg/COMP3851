@@ -129,7 +129,7 @@ namespace TurboTrend.Business
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conn;
                 cmd.Parameters.AddWithValue("@hashtagtxt", input);
-                cmd.Parameters.AddWithValue("@username", HttpContext.Current.Session["username"].ToString());
+                cmd.Parameters.AddWithValue("@username", HttpContext.Current.Session["userName"].ToString());
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
