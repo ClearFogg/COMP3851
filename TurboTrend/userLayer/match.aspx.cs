@@ -27,7 +27,7 @@ namespace TurboTrend.userLayer
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            btnSearch.Enabled = false;
+            btnSearch.Enabled = true;
 
             ScraperConnection scraper = new ScraperConnection();
             DataTable dTable = scraper.interpretHashTagAndSearch(hashtag.Text);
