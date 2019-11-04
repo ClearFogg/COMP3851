@@ -120,7 +120,7 @@ namespace TurboTrend.InstagramScraper
                 ProjectConfig settings = new ProjectConfig();
 
                 Process proc = new Process();
-                proc.StartInfo.FileName = "python";
+                proc.StartInfo.FileName = settings.PythonLocation;//"python";
                 proc.StartInfo.Arguments = string.Format("{0} {1}", settings.ScraperLocation, sHashes);
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.UseShellExecute = false;
@@ -142,10 +142,12 @@ namespace TurboTrend.InstagramScraper
                     interpretOutput(output);
                 }
             }
-            catch
+            catch(Exception e)
             {
                 // If we hit an error, just assume that there are no accounts searchable.
                 accList = new Account[0];
+
+                Console.WriteLine(e.Message);
             }
         }
 
