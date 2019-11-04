@@ -14,22 +14,20 @@ namespace TurboTrend.userLayer
     public partial class match : System.Web.UI.Page
     {
         SearchParameters sP = new SearchParameters();
-        
+        /*
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["username"] == null)
             {
                 Response.Redirect("login.aspx");
            }
-        }
+        }*/
 
 
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             btnSearch.Enabled = false;
-
-            sP.engagementRate = Convert.ToDouble(engagementRateFilter.SelectedValue);
 
             ScraperConnection scraper = new ScraperConnection();
             DataTable dTable = scraper.interpretHashTagAndSearch(hashtag.Text);
@@ -38,7 +36,19 @@ namespace TurboTrend.userLayer
             {
                 DataRow dr = dTable.Rows[i];
 
-                if (Convert.ToDouble(dr["engagementRate"]) > sP.engagementRate)
+                if (Convert.ToDouble(dr["engagementRate"]) > Convert.ToDouble(engagementRateFilter.SelectedValue))
+                {
+                    dr.Delete();
+                }
+                else if (Convert.ToInt32(dr["accountFollowers"]) < Convert.ToInt32(followersMin.Text) || Convert.ToInt32(dr["accountFollowers"]) > Convert.ToInt32(followersMax.Text))
+                {
+                    dr.Delete();
+                }
+                else if (Convert.ToInt32(dr["totalPostLast60Days"]) < Convert.ToInt32(totalPostPast60Days.SelectedValue))
+                {
+                    dr.Delete();
+                }
+                else if (Convert.ToInt32(dr["estimatedCostPerPost"]) < Convert.ToInt32(costPerPost.SelectedValue))
                 {
                     dr.Delete();
                 }
@@ -52,6 +62,42 @@ namespace TurboTrend.userLayer
 
         }
 
+        protected void followersMin_TextChanged(object sender, EventArgs e)
+        {
+            engagementRateFilter.SelectedIndex = 0;
+            costPerPost.SelectedIndex = 0;
+            totalPostPast60Days.SelectedIndex = 0;
+        }
 
+        protected void followersMax_TextChanged(object sender, EventArgs e)
+        {
+            engagementRateFilter.SelectedIndex = 0;
+            costPerPost.SelectedIndex = 0;
+            totalPostPast60Days.SelectedIndex = 0;
+        }
+
+        protected void engagementRateFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            costPerPost.SelectedIndex = 0;
+            totalPostPast60Days.SelectedIndex = 0;
+            followersMin.Text = "0";
+            followersMax.Text = "";
+        }
+
+        protected void costPerPost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            engagementRateFilter.SelectedIndex = 0;
+            totalPostPast60Days.SelectedIndex = 0;
+            followersMin.Text = "0";
+            followersMax.Text = "";
+        }
+
+        protected void totalPostPast60Days_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            costPerPost.SelectedIndex = 0;
+            engagementRateFilter.SelectedIndex = 0;
+            followersMin.Text = "0";
+            followersMax.Text = "";
+        }
     }
 }
