@@ -28,10 +28,10 @@
         </p>
         <p><em>If many of the people you want to reach spend their spare time looking like this...</em></p>
         <div class="aboutColumns" style="margin-bottom: 1rem;">
-            <div style="margin-top: 2%; grid-column-start: 1;">
+            <div>
                 <img src="media/iPhone.jpg" alt="iPhone" width="90%"/> <!-- Photo by Sherise Van Dyk on Unsplash: https://unsplash.com/photos/SFP95g4WGFA -->
             </div>
-            <div style="grid-column-start: 2; font-weight: bold; line-height: 2rem;">
+            <div style="font-weight: bold; line-height: 2rem;">
                 <p>Cut out the work of trawling Instagram for influencers that suit your brand, and let us do it for you!  
                     <a href="signup.aspx">Join now</a> and we'll help you find your perfect match.  From there, all you have to do
                     is stitch up a deal and watch your popularity grow!</p>

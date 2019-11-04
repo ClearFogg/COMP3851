@@ -50,18 +50,13 @@
             <!--It would be great to have this bit appear after the search button is hit. I'm not entirely sure how so with time
                 constraints, we could create a new page to house it all if necessary.-->
                 <!-- Update panel to keep changes made to items only update inside of here, rather than refresh page. -->
+                    <div style="overflow: auto;">
                        <asp:GridView ID="grdCategories" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed table-hover">
                             <Columns>
-                                <asp:TemplateField HeaderText="Account Name">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_accName" runat="server" Text='<%#Eval("accountName") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Account Url">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_accURL" runat="server" Text='<%#Eval("accountUrl") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <asp:HyperLinkField 
+                                    DataNavigateUrlFields="accountName"
+                                    DataNavigateUrlFormatString="/userLayer/redirectAcc.aspx?account={0}"
+                                    DataTextField="accountName" />
                                 <asp:TemplateField HeaderText="Account Followers">
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_ImagePath" runat="server" Text='<%#Eval("accountFollowers") %>'></asp:Label>
@@ -95,6 +90,7 @@
                             </Columns>
                             <AlternatingRowStyle CssClass="altRow" />
                         </asp:GridView>
+                    </div>
     </div>
 </asp:Content>
     
