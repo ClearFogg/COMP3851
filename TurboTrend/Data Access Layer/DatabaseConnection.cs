@@ -12,6 +12,26 @@ namespace TurboTrend.Business
     {
         public DatabaseConnection() { }
 
+        public string getEmailFromBusinessName(string businessName)
+        {
+            string sReturnedValue = "";
+
+            SqlConnection conn = new SqlConnection((new ProjectConfig().DBConnectionString));
+            using (SqlCommand cmd = new SqlCommand("sp_ChangeUserPassword"))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("@accountName", businessName);
+                conn.Open();
+
+                sReturnedValue = (string)cmd.ExecuteScalar();
+
+                conn.Close();
+            }
+
+            return sReturnedValue;
+        }
+
         public int changePassword(string sPassword, string sEmail)
         {
             int iReturnCode = 0;
@@ -116,10 +136,8 @@ namespace TurboTrend.Business
             }
         }
 
-        public DataTable InsertInfluencerIntoDB(Account[] listAcc)
+        private DataTable createDataTable()
         {
-            //ScraperConnection scraper = new ScraperConnection();
-            //Account[] listAcc = scraper.accList;
             DataTable dt = new DataTable();
             dt.Columns.Add("accountName");
             dt.Columns.Add("accountUrl");
@@ -129,54 +147,59 @@ namespace TurboTrend.Business
             dt.Columns.Add("engagementRate");
             dt.Columns.Add("estimatedCostPerPost");
             dt.Columns.Add("totalPostLast60Days");
+            return dt;
+        }
 
-            
+        public DataTable InsertInfluencerIntoDB(Account[] listAcc)
+        {
+            //ScraperConnection scraper = new ScraperConnection();
+            //Account[] listAcc = scraper.accList;
+            DataTable dt = createDataTable();          
 
 
-            for (int i = 0; i < 1; i++)// 5 is a temp number, web page needs to be coded to allow for more results?
+            for (int i = 0; i < listAcc.Length; i++)
             {
-                DataRow dataRow = dt.NewRow();
-                dataRow[0] = "cats";//listAcc[i].accountName;
-                dataRow[1] = "catsinstagram";//listAcc[i].accountUrl;
-                dataRow[2] = "34.5k";//listAcc[i].accountFollowers;
-                dataRow[3] = "1.2m";//listAcc[i].accountFollowing;
-                dataRow[4] = "134";//listAcc[i].accountPosts;
+                DataTable tempTable = createDataTable();
+
+                DataRow dataRow = tempTable.NewRow();
+                dataRow[0] = listAcc[i].accountName;
+                dataRow[1] = listAcc[i].accountUrl;
+                dataRow[2] = listAcc[i].accountFollowers;
+                dataRow[3] = listAcc[i].accountFollowing;
+                dataRow[4] = listAcc[i].accountPosts;
                 dataRow[5] = 99; // Engagement Rate, talk to Jeremy
-                dataRow[6] = 10; // Cost per post
+                dataRow[6] = Math.Round(int.Parse(listAcc[i].accountFollowers) * 0.0005); // Cost per post
                 dataRow[7] = 10; // Posts last 60 days
-                dt.Rows.Add(dataRow);
-            }
+                tempTable.Rows.Add(dataRow);
 
-            SqlConnection conn = null;
-            SqlDataReader rdr = null;
+                dt.ImportRow(tempTable.Rows[0]);
 
-            try
-            {
-                conn = new SqlConnection((new ProjectConfig().DBConnectionString));
 
-                using (SqlCommand cmd = new SqlCommand("sp_UpdateInsertInfluencer"))
+                SqlConnection conn = new SqlConnection((new ProjectConfig().DBConnectionString));
+
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = conn;
-                    cmd.Parameters.AddWithValue("@tblInfluencer", dt);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    using (SqlCommand cmd = new SqlCommand("sp_UpdateInsertInfluencer"))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = conn;
+                        cmd.Parameters.AddWithValue("@tblInfluencer", tempTable);
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
+                //Checking if connection is still open, closing if it is.
+                finally
+                {
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
                 }
             }
-            //Checking if connection is still open, closing if it is.
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Close();
-                }
-                if (rdr != null)
-                {
-                    rdr.Close();
-                }
-                
-            }
+
+
 
             return dt;
         }

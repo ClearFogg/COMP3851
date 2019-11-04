@@ -1,19 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="match.aspx.cs" MasterPageFile="TurboTrend.Master" Inherits="TurboTrend.userLayer.match" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="mainContent" runat="server">
+<asp:Content ID="match" ContentPlaceHolderID="mainContent" runat="server">
     <asp:Label ID="outputInfo" runat="server"></asp:Label>
     <asp:PlaceHolder ID="searchContent" runat="server"></asp:PlaceHolder>
-        <div class="heroSection">
-		    <div class="heroRow">
-			    <div class="heroContainer heroWrap">
-				    <h1>Find Your Match</h1>
+        <div class="mainGrid">
+    	    <h1>Find Your Match</h1>
                     <p style="text-align:center">Enter up to three hashtags (separated by commas) and set your search parameters.</p>
-                    <br />
-                </div>
-			<div class="heroContainer heroWrap">
             <asp:Panel runat="server" CssClass="centerAlign">
-            <asp:TextBox ID="hashtag" runat="server" placeholder="Search" autocomplete="off" class="form-control" style="width: 90%; margin-left:5%; margin-right:5%;"></asp:TextBox>
-            <!--Insert checkboxes/sliders/inputs for search parameters here.-->
+            <asp:TextBox ID="hashtag" runat="server" placeholder="Search" autocomplete="off" class="textBox"></asp:TextBox>
+            <br />
+                <div style="margin-top: 3%; width: 90%;">
+                <!--Insert checkboxes/sliders/inputs for search parameters here.-->
             <asp:Label ID="lblEngagementRate" runat="server" Text="Filter by Engagement Rate"></asp:Label>
             <asp:DropDownList ID="engagementRateFilter" runat="server">
                 <asp:ListItem Enabled="true" Text="Filter engagement rate..." Value="-1"></asp:ListItem>
@@ -30,27 +27,20 @@
                 <asp:ListItem Enabled="true" Text="> $1000" Value="1000"></asp:ListItem>
                 <asp:ListItem Enabled="true" Text="> $1500" Value="1500"></asp:ListItem>
             </asp:DropDownList>
-            <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" class="btnSignUp" Text="Search" style="float:right; margin-right:5%; color:white; margin-top: 2%;"/>
+                    </div>
+                <br />
+            <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" class="btnSignUp" Text="Search" style="font-size: 1.2rem; margin: 0; width: 100%;"/>
             </asp:Panel>
-			</div>
-		</div>
             <!--It would be great to have this bit appear after the search button is hit. I'm not entirely sure how so with time
                 constraints, we could create a new page to house it all if necessary.-->
-				<div class="heroRow">
-					<div class="heroContainer heroWrap">
                 <!-- Update panel to keep changes made to items only update inside of here, rather than refresh page. -->
+                    <div style="overflow: auto;">
                        <asp:GridView ID="grdCategories" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed table-hover">
                             <Columns>
-                                <asp:TemplateField HeaderText="Account Name">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_accName" runat="server" Text='<%#Eval("accountName") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Account Url">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_accURL" runat="server" Text='<%#Eval("accountUrl") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <asp:HyperLinkField 
+                                    DataNavigateUrlFields="accountName"
+                                    DataNavigateUrlFormatString="/userLayer/redirectAcc.aspx?account={0}"
+                                    DataTextField="accountName" />
                                 <asp:TemplateField HeaderText="Account Followers">
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_ImagePath" runat="server" Text='<%#Eval("accountFollowers") %>'></asp:Label>
@@ -84,12 +74,8 @@
                             </Columns>
                             <AlternatingRowStyle CssClass="altRow" />
                         </asp:GridView>
-					</div>
-					<div class="heroContainer heroWrap"></div>
-					<div class="heroContainer heroWrap"></div>
-				</div>
-			</div>
-
+                    </div>
+    </div>
 </asp:Content>
     
 

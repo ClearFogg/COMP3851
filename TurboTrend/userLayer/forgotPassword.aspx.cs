@@ -40,7 +40,7 @@ namespace TurboTrend.userLayer
             if (IsValid)
             {
                 EmailManager email = new EmailManager();
-                email.sendChangePassword(emailBox.Text);
+                email.sendChangePassword(emailBox.Text.ToLower());
             }
         }
 
