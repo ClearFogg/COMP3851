@@ -13,9 +13,10 @@ namespace TurboTrend
 
     public class ProjectConfig
     {
-        public readonly string PythonLocation = @"C:\Users\Nick\AppData\Local\Programs\Python\Python37-32\python.exe";
-        public readonly string ScraperLocation = @"C:\Users\Nick\Source\Repos\COMP3851\TurboTrend\InstagramScraper\Scraper.py";
-        public readonly string DBConnectionString = @"Server=DESKTOP-3S0MBR6;DataBase=TurboTrend;Integrated Security=SSPI";
+        public readonly string PythonLocation = @"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe";
+        //@"C:\Users\scott\AppData\Local\Programs\Python\Python38-32\python.exe";
+        public readonly string ScraperLocation = @"C:\Users\scott\OneDrive\Documents\Github\ClearFogg\COMP3851\TurboTrend\InstagramScraper\Scraper.py";
+        public readonly string DBConnectionString = @"Server=SCOTTSLAPTOP;DataBase=TurboTrend;Integrated Security=SSPI";
 
         public readonly int MaxSearchTerms = 6;
     }
