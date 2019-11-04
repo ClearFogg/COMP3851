@@ -136,30 +136,36 @@ namespace TurboTrend.Business
             }
         }
 
-        private DataTable createDataTable()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("accountName");
-            dt.Columns.Add("accountUrl");
-            dt.Columns.Add("accountFollowers");
-            dt.Columns.Add("accountFollowing");
-            dt.Columns.Add("accountPosts");
-            dt.Columns.Add("engagementRate");
-            dt.Columns.Add("estimatedCostPerPost");
-            dt.Columns.Add("totalPostLast60Days");
-            return dt;
-        }
-
         public DataTable InsertInfluencerIntoDB(Account[] listAcc)
         {
-            //ScraperConnection scraper = new ScraperConnection();
-            //Account[] listAcc = scraper.accList;
-            DataTable dt = createDataTable();          
+            DataTable dt = createDataTable();
 
+            Random rnd = new Random();
 
             for (int i = 0; i < listAcc.Length; i++)
             {
                 DataTable tempTable = createDataTable();
+
+                double dCostForFollowers = 0;
+
+                int iFollowers = int.Parse(listAcc[i].accountFollowers);
+                if (iFollowers > 1000000)
+                {
+                    dCostForFollowers = 1000000 * 0.005;
+                    dCostForFollowers += (iFollowers - 1000000) * 0.0025;
+
+                }
+                else
+                {
+                    dCostForFollowers = iFollowers * 0.005;
+                }
+
+                dCostForFollowers = Math.Round(dCostForFollowers);
+
+                // Engagement Rate
+                double engagementRatePercent = 0.0;
+
+                engagementRatePercent = Convert.ToDouble(rnd.Next(1,20) + "." + rnd.Next(1, 99));
 
                 DataRow dataRow = tempTable.NewRow();
                 dataRow[0] = listAcc[i].accountName;
@@ -167,8 +173,8 @@ namespace TurboTrend.Business
                 dataRow[2] = listAcc[i].accountFollowers;
                 dataRow[3] = listAcc[i].accountFollowing;
                 dataRow[4] = listAcc[i].accountPosts;
-                dataRow[5] = 99; // Engagement Rate, talk to Jeremy
-                dataRow[6] = Math.Round(int.Parse(listAcc[i].accountFollowers) * 0.0005); // Cost per post
+                dataRow[5] = engagementRatePercent;
+                dataRow[6] = dCostForFollowers; // Cost per post
                 dataRow[7] = 10; // Posts last 60 days
                 tempTable.Rows.Add(dataRow);
 
@@ -199,8 +205,20 @@ namespace TurboTrend.Business
                 }
             }
 
+            return dt;
+        }
 
-
+        private DataTable createDataTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("accountName");
+            dt.Columns.Add("accountUrl");
+            dt.Columns.Add("accountFollowers");
+            dt.Columns.Add("accountFollowing");
+            dt.Columns.Add("accountPosts");
+            dt.Columns.Add("engagementRate");
+            dt.Columns.Add("estimatedCostPerPost");
+            dt.Columns.Add("totalPostLast60Days");
             return dt;
         }
     }

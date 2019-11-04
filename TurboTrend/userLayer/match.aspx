@@ -38,6 +38,7 @@
                        <asp:GridView ID="grdCategories" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed table-hover">
                             <Columns>
                                 <asp:HyperLinkField 
+                                    HeaderText = "Account Name"
                                     DataNavigateUrlFields="accountName"
                                     DataNavigateUrlFormatString="/userLayer/redirectAcc.aspx?account={0}"
                                     DataTextField="accountName" />
@@ -58,12 +59,12 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Account Engagement Rate">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("engagementRate")  %>'></asp:Label>
+                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("engagementRate")  %>'></asp:Label>%
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estimated Cost Per Post">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("estimatedCostPerPost")  %>'></asp:Label>
+                                        $<asp:Label ID="lbl_Price" runat="server" Text='<%# Eval("estimatedCostPerPost")  %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Total Posts Last 60 Days">
