@@ -120,7 +120,7 @@ namespace TurboTrend.InstagramScraper
                 ProjectConfig settings = new ProjectConfig();
 
                 Process proc = new Process();
-                proc.StartInfo.FileName = "python";
+                proc.StartInfo.FileName = settings.PythonLocation;
                 proc.StartInfo.Arguments = string.Format("{0} {1}", settings.ScraperLocation, sHashes);
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.UseShellExecute = false;

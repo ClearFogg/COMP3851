@@ -14,14 +14,14 @@ namespace TurboTrend.userLayer
     public partial class match : System.Web.UI.Page
     {
         SearchParameters sP = new SearchParameters();
-        /*
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["username"] == null)
             {
                 Response.Redirect("login.aspx");
            }
-        }*/
+        }
 
 
 
@@ -29,20 +29,37 @@ namespace TurboTrend.userLayer
         {
             btnSearch.Enabled = false;
 
+            bool maxFollowersNull = false;
+
             ScraperConnection scraper = new ScraperConnection();
             DataTable dTable = scraper.interpretHashTagAndSearch(hashtag.Text);
+
+            try
+            {
+                Convert.ToInt32(followersMax.Text);
+            }
+            catch
+            {
+                maxFollowersNull = true;
+            }
 
             for (int i = dTable.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow dr = dTable.Rows[i];
-
-                if (Convert.ToDouble(dr["engagementRate"]) > Convert.ToDouble(engagementRateFilter.SelectedValue))
+                if (Convert.ToInt32(dr["accountFollowers"]) < 6000)
                 {
                     dr.Delete();
                 }
-                else if (Convert.ToInt32(dr["accountFollowers"]) < Convert.ToInt32(followersMin.Text) || Convert.ToInt32(dr["accountFollowers"]) > Convert.ToInt32(followersMax.Text))
+                else if (Convert.ToDouble(dr["engagementRate"]) > Convert.ToDouble(engagementRateFilter.SelectedValue))
                 {
                     dr.Delete();
+                }
+                else if (!maxFollowersNull)
+                {
+                    if (Convert.ToInt32(dr["accountFollowers"]) < Convert.ToInt32(followersMin.Text) || Convert.ToInt32(dr["accountFollowers"]) > Convert.ToInt32(followersMax.Text))
+                    {
+                        dr.Delete();
+                    }
                 }
                 else if (Convert.ToInt32(dr["totalPostLast60Days"]) < Convert.ToInt32(totalPostPast60Days.SelectedValue))
                 {
