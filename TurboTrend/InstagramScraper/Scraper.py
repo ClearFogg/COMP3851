@@ -15,7 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-os.chdir(r"/Users/j-fog/Desktop/TurboTrend/TurboTrend/InstagramScraper/")
+os.chdir(r"\Users\scott\OneDrive\Documents\Github\ClearFogg\COMP3851\TurboTrend\InstagramScraper")
 
 # Initial user agent
 Options = webdriver.ChromeOptions()
