@@ -15,7 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-os.chdir(r"C:\Users\Nick\Source\Repos\COMP3851\TurboTrend\InstagramScraper")
+os.chdir(r"\Users\scott\OneDrive\Documents\Github\ClearFogg\COMP3851\TurboTrend\InstagramScraper")
 
 # Initial user agent
 Options = webdriver.ChromeOptions()
@@ -24,8 +24,8 @@ Options.add_experimental_option("prefs", {"profile.default_content_settings.cook
 driver = webdriver.Chrome(options=Options)
 
 accPostNo = 10
-hashPostNo = 10
-numOfScrolls = 3
+hashPostNo = 200
+numOfScrolls = 1
 
 
 def replace_char(text):
@@ -43,8 +43,6 @@ def get_posts(url):
 
     try:
         for x in range(numOfScrolls):
-            if len(posts) == 15:
-                break
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
             time.sleep(1)
@@ -55,11 +53,12 @@ def get_posts(url):
                 link = link.find_element_by_tag_name('a')
                 element = link.get_attribute('href')
 
-                if element not in posts and len(posts) != 15:
+                if element not in posts:
                     posts.append(element)
 
                 else:
                     pass
+
         # If the page returns 0 results, there must be an error or failure to connect. Quit the web application.
         if len(posts) == 0:
             driver.quit()

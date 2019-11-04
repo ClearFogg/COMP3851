@@ -40,6 +40,15 @@ namespace TurboTrend.userLayer {
         protected global::System.Web.UI.WebControls.TextBox hashtag;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// lblEngagementRate control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,51 @@ namespace TurboTrend.userLayer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList costPerPost;
+        
+        /// <summary>
+        /// lblTotalFollowers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalFollowers;
+        
+        /// <summary>
+        /// followersMin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox followersMin;
+        
+        /// <summary>
+        /// followersMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox followersMax;
+        
+        /// <summary>
+        /// lbltotalPostPast60Days control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltotalPostPast60Days;
+        
+        /// <summary>
+        /// totalPostPast60Days control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList totalPostPast60Days;
         
         /// <summary>
         /// btnSearch control.
