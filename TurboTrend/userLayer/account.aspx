@@ -3,18 +3,24 @@
     <div class="mainGrid">
         <h1>Your Account</h1>
         <div>
-            <h2 style="text-align: left;">Business Name:</h2>
-            <asp:Label runat="server" ID="businessName"></asp:Label>
+            <h2 style="text-align: left; text-decoration: underline;">Business Name:</h2>
+            <div style="margin-left: 3rem;">
+                <asp:Label runat="server" ID="businessName"></asp:Label>
+            </div>
         </div>
         <br />
         <div>
-            <h2 style="text-align: left;">Email Address:</h2>
-            <asp:Label runat="server" ID="accEmail"></asp:Label>
+            <h2 style="text-align: left; text-decoration: underline;">Email Address:</h2>
+            <div style="margin-left: 3rem;">
+                <asp:Label runat="server" ID="accEmail"></asp:Label>
+            </div>
         </div>
         <br />
         <div>
             <h2 style="text-align: left;">Change Password:</h2>
-            <asp:Button runat="server" ID="changePasswordButton" OnClick="changePasswordButton_Click" class="btnPwReset" Text="Reset Now" />
+            <div style="margin-left: 3rem;">
+                <asp:Button runat="server" ID="changePasswordButton" OnClick="changePasswordButton_Click" class="btnPwReset" Text="Reset Now" />
+            </div>
         </div>
     </div>
 </asp:Content>

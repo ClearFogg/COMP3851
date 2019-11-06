@@ -6,10 +6,12 @@
         <div>
             <h2 style="text-align: left;">Username:</h2>
             <asp:TextBox ID="usernameBox" runat="server" placeholder="Username" class="textBox"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ID="usernameRequired" ErrorMessage="<br/>Username is required." ControlToValidate="usernameBox" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
         <div style="margin-top: 3%;">
             <h2 style="text-align: left;">Password:</h2>
             <asp:TextBox ID="passwordBox" TextMode="Password" placeholder="*******" runat="server" class="textBox"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ID="passwordRequired" ErrorMessage="<br/>Please enter your password" ControlToValidate="passwordBox" Display="Dynamic"></asp:RequiredFieldValidator>
             <p><a href="forgotPassword.aspx">Forgotten your password? Click here!</a></p>
         </div>
         <asp:Label ID="LoginMsg" runat="server" Text=""></asp:Label>

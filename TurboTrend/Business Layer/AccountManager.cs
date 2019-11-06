@@ -13,6 +13,12 @@ namespace TurboTrend.Business_Layer
 
         public AccountManager() { }
 
+        public string getEmailFromUsername(string sUsername)
+        {
+            DatabaseConnection db = new DatabaseConnection();
+            return db.getEmailFromUserName(sUsername);
+        }
+
         public int createAccount(string sName, string sPass, string sBusiness, string sEmail, string sPhone, string sIndustry)
         {
             int iReturnedValue = -1;

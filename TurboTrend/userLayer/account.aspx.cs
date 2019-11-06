@@ -13,23 +13,27 @@ namespace TurboTrend.userLayer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["businessName"] == null)
+            if (Session["userName"] == null)
             {
                 Response.Redirect("~/userLayer/login.aspx");
             }
             else
             {
-                DatabaseConnection db = new DatabaseConnection();
-                string bName = db.getEmailFromBusinessName((string)Session["businessName"]);
+                businessName.Text = (string)Session["userName"];
 
-                businessName.Text = bName;
+                AccountManager accMgr = new AccountManager();
+                string sName = accMgr.getEmailFromUsername((string)Session["userName"]);
+
+                accEmail.Text = sName;
             }
         }
 
         protected void changePasswordButton_Click(object sender, EventArgs e)
         {
             EmailManager email = new EmailManager();
-            
+            AccountManager accMgr = new AccountManager();
+
+            email.sendChangePassword(accMgr.getEmailFromUsername((string)Session["userName"]));
         }
     }
 }

@@ -22,6 +22,15 @@ namespace TurboTrend.userLayer {
         protected global::System.Web.UI.WebControls.TextBox usernameBox;
         
         /// <summary>
+        /// usernameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameRequired;
+        
+        /// <summary>
         /// passwordBox control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TurboTrend.userLayer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passwordBox;
+        
+        /// <summary>
+        /// passwordRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passwordRequired;
         
         /// <summary>
         /// LoginMsg control.

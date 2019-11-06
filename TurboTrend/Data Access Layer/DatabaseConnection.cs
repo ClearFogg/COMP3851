@@ -12,16 +12,16 @@ namespace TurboTrend.Business
     {
         public DatabaseConnection() { }
 
-        public string getEmailFromBusinessName(string businessName)
+        public string getEmailFromUserName(string sUsername)
         {
             string sReturnedValue = "";
 
             SqlConnection conn = new SqlConnection((new ProjectConfig().DBConnectionString));
-            using (SqlCommand cmd = new SqlCommand("sp_ChangeUserPassword"))
+            using (SqlCommand cmd = new SqlCommand("sp_ReturnEmail"))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conn;
-                cmd.Parameters.AddWithValue("@accountName", businessName);
+                cmd.Parameters.AddWithValue("@accountName", sUsername);
                 conn.Open();
 
                 sReturnedValue = (string)cmd.ExecuteScalar();
