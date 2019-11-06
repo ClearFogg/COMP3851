@@ -13,11 +13,10 @@ namespace TurboTrend.userLayer
 {
     public partial class match : System.Web.UI.Page
     {
-        SearchParameters sP = new SearchParameters();
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null)
+            if (Session["userName"] == null)
             {
                 Response.Redirect("login.aspx");
            }

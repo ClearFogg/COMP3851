@@ -19,6 +19,8 @@ namespace TurboTrend
             ScraperLocation = fileSystem +  @"\Scraper.py";
         }
 
+        public readonly string[] emailAccountInfo = new string[] { "turbotrendsite@gmail.com", "turbotrend2019!" };
+
         // Change this to point to your local directory
         private readonly string fileSystem = @"C:\Users\Nick\Source\Repos\COMP3851\TurboTrend\InstagramScraper";
 

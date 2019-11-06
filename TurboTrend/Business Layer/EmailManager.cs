@@ -10,9 +10,12 @@ namespace TurboTrend.Business_Layer
 {
     public class EmailManager
     {
-        private string ourAddress = "turbotrendsite@gmail.com";
+        private ProjectConfig settings;
 
-        public EmailManager(){}
+        public EmailManager()
+        {
+            settings = new ProjectConfig();
+        }
 
         private SmtpClient getSmtp()
         {
@@ -23,7 +26,7 @@ namespace TurboTrend.Business_Layer
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("turbotrendsite@gmail.com", "turbotrend2019!")
+                Credentials = new NetworkCredential(settings.emailAccountInfo[0], settings.emailAccountInfo[1])
             };
         }
 
@@ -31,8 +34,8 @@ namespace TurboTrend.Business_Layer
         { // Sends an inquiry to the turbotrend account
             string sEmail = "<!DOCTYPE html><html><head><meta charset=\"utf-8\" /><title>Support Request</title></head><body><div style=\"background-color: #e6e8eb; margin-top: 1%; padding: 2%;\"><p><noscript>" + sMessage + "</noscript></p></div></div></body></html>";
 
-            MailAddress fromAddr = new MailAddress(ourAddress);
-            MailAddress toAddr = new MailAddress(ourAddress);
+            MailAddress fromAddr = new MailAddress(settings.emailAccountInfo[0]);
+            MailAddress toAddr = new MailAddress(settings.emailAccountInfo[0]);
             MailMessage msg = new MailMessage(fromAddr, toAddr);
             msg.Subject = "Support Request - " + DateTime.Now + " " + sFromEmail;
             msg.Body = sMessage;
@@ -58,7 +61,7 @@ namespace TurboTrend.Business_Layer
 
             try
             {
-                MailAddress fromAddr = new MailAddress(ourAddress, "TurboTrend");
+                MailAddress fromAddr = new MailAddress(settings.emailAccountInfo[0], "TurboTrend");
                 MailAddress toAddr = new MailAddress(sEmail);
                 MailMessage msg = new MailMessage(fromAddr, toAddr);
                 msg.Subject = "Change Password Request";
