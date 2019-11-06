@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/userLayer/TurboTrend.Master" AutoEventWireup="true" CodeBehind="account.aspx.cs" Inherits="TurboTrend.userLayer.account" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="mainContent" runat="server">
+<asp:Content ID="account" ContentPlaceHolderID="mainContent" runat="server">
     <div class="mainGrid">
         <h1>Your Account</h1>
         <div>
