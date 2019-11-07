@@ -26,7 +26,7 @@ namespace TurboTrend
 
         public string PythonLocation;
         public readonly string ScraperLocation;
-        public readonly string DBConnectionString = @"Server=DESKTOP-3S0MBR6;DataBase=TurboTrend;Integrated Security=SSPI";
+        public readonly string DBConnectionString = @"Server=DESKTOP-UOOEQ82\SQLEXPRESS;DataBase=TurboTrend;Integrated Security=SSPI";
 
         public readonly int MaxSearchTerms = 6;
     }
