@@ -15,7 +15,7 @@ namespace TurboTrend
     {
         public ProjectConfig()
         {
-            PythonLocation = fileSystem + @"\Python37-32\python.exe";
+            PythonLocation = @"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe";
             ScraperLocation = fileSystem + @"\Scraper.py";
         }
 
