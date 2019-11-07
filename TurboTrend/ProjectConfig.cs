@@ -15,7 +15,7 @@ namespace TurboTrend
     {
         public ProjectConfig()
         {
-            PythonLocation = @"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe";
+            PythonLocation = @"C:\Users\scott\OneDrive\Documents\Github\COMP38512NEWEST\TurboTrend\InstagramScraper\Python36_64\python.exe";
             ScraperLocation = fileSystem + @"\Scraper.py";
         }
 
