@@ -15,18 +15,18 @@ namespace TurboTrend
     {
         public ProjectConfig()
         {
-            PythonLocation = @"C:\Users\scott\Source\Repos\COMP3851\TurboTrend\InstagramScraper\Python36_64\python.exe";
+            PythonLocation = @"C:\Users\scott\OneDrive\Documents\Github\COMP38512NEWEST\TurboTrend\InstagramScraper\Python36_64\python.exe";
             ScraperLocation = fileSystem + @"\Scraper.py";
         }
 
         public readonly string[] emailAccountInfo = new string[] { "turbotrendsite@gmail.com", "turbotrend2019!" };
 
         // Change this to point to your local directory
-        private readonly string fileSystem = @"C:\Users\scott\Source\Repos\COMP3851\TurboTrend\InstagramScraper";
+        private readonly string fileSystem = @"C:\Users\scott\OneDrive\Documents\Github\ClearFogg\COMP3851\TurboTrend\InstagramScraper";
 
         public string PythonLocation;
         public readonly string ScraperLocation;
-        public readonly string DBConnectionString = @"Server=SCOTTSSUPERCOMP;DataBase=TurboTrend;Integrated Security=SSPI";
+        public readonly string DBConnectionString = @"Server=SCOTTSLAPTOP;DataBase=TurboTrend;Integrated Security=SSPI";
 
         public readonly int MaxSearchTerms = 6;
     }
