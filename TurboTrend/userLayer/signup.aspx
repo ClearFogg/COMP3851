@@ -2,7 +2,7 @@
 
 <asp:Content ID="home" ContentPlaceHolderID="mainContent" runat="server">
     <div class="mainGrid">
-    <h1>Signup</h1>
+    <h1>Sign Up</h1>
 	<asp:Panel ID="pageContent" runat="server">
         <div>
             <h2 style="text-align: left;">Account Name:</h2>
