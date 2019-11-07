@@ -37,12 +37,6 @@
         <div style="overflow: auto;">
             <asp:GridView ID="grdCategories" runat="server" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:TemplateField HeaderText="">
-                        <ItemTemplate>  
-                            <asp:Label ID="lbl_ImagePath" runat="server" Text='<%#Eval("accountFollowers") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
                     <asp:HyperLinkField
                         HeaderText="Account Name"
                         DataNavigateUrlFields="accountName"

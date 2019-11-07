@@ -3931,8 +3931,6 @@
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\bitmaps\textfile.gif" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\bitmaps\warning.gif" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\demos\bitmaps\tix.gif" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.py" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.txt" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\tix84.dll" />
     <Content Include="InstagramScraper\Python37-32\tcl\tk8.6\demos\images\earth.gif" />
     <Content Include="InstagramScraper\Python37-32\tcl\tk8.6\demos\images\earthmenu.png" />
@@ -4088,14 +4086,6 @@
     <Compile Include="Business Layer\AccountManager.cs" />
     <Compile Include="Business Layer\EmailManager.cs" />
     <Compile Include="Data Access Layer\DatabaseConnection.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Bisque.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Blue.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Gray.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\SGIGray.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TixGray.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TK.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TkWin.cs" />
-    <Compile Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.cs" />
     <Compile Include="InstagramScraper\ScraperConnection.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\SearchParameters.cs" />
@@ -8328,32 +8318,6 @@
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\PanedWin.tcl" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pkgIndex.tcl" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\PopMenu.tcl" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\10Point.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\10Point.fsc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\12Point.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\12Point.fsc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\14Point.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\14Point.fsc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Bisque.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Blue.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Gray.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Makefile" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Old12Pt.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\Old14Pt.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\pkgIndex.tcl" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\SGIGray.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TixGray.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\tixmkpref" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TK.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TK.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TK.fsc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TkWin.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TkWin.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\TkWin.fsc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.csc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.fs" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.fsc" />
-    <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\WmDefault.tcl" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\Primitiv.tcl" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\ResizeH.tcl" />
     <Content Include="InstagramScraper\Python37-32\tcl\tix8.4.3\Select.tcl" />
@@ -8540,6 +8504,8 @@
     <Content Include="InstagramScraper\Python37-32\tcl\tk86t.lib" />
     <Content Include="InstagramScraper\Python37-32\tcl\tkstub86.lib" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -8624,7 +8590,6 @@
     <Folder Include="InstagramScraper\Python37-32\Lib\unittest\test\__pycache__\" />
     <Folder Include="InstagramScraper\Python37-32\Lib\venv\__pycache__\" />
     <Folder Include="InstagramScraper\Python37-32\Lib\wsgiref\__pycache__\" />
-    <Folder Include="InstagramScraper\Python37-32\tcl\tix8.4.3\pref\__pycache__\" />
     <Folder Include="InstagramScraper\Python37-32\Tools\demo\__pycache__\" />
     <Folder Include="InstagramScraper\Python37-32\Tools\i18n\__pycache__\" />
     <Folder Include="InstagramScraper\Python37-32\Tools\parser\__pycache__\" />

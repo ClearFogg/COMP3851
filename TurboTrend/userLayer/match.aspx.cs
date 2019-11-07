@@ -45,29 +45,45 @@ namespace TurboTrend.userLayer
             for (int i = dTable.Rows.Count - 1; i >= 0; i--)
             {
                 DataRow dr = dTable.Rows[i];
-                if (Convert.ToInt32(dr["accountFollowers"]) < 6000)
+                if (Convert.ToInt32(dr["accountFollowers"]) < 10)
                 {
                     dr.Delete();
                 }
-                else if (Convert.ToDouble(dr["engagementRate"]) > Convert.ToDouble(engagementRateFilter.SelectedValue))
+                if (engagementRateFilter.SelectedIndex != 0)
                 {
-                    dr.Delete();
+                    if (Convert.ToDouble(dr["engagementRate"]) > Convert.ToDouble(engagementRateFilter.SelectedValue))
+                    {
+                        dr.Delete();
+                    }
                 }
-                else if (!maxFollowersNull)
+                if (!maxFollowersNull)
                 {
                     if (Convert.ToInt32(dr["accountFollowers"]) < Convert.ToInt32(followersMin.Text) || Convert.ToInt32(dr["accountFollowers"]) > Convert.ToInt32(followersMax.Text))
                     {
                         dr.Delete();
                     }
                 }
-                else if (Convert.ToInt32(dr["totalPostLast60Days"]) < Convert.ToInt32(totalPostPast60Days.SelectedValue))
+                try
                 {
-                    dr.Delete();
+                    if (totalPostPast60Days.SelectedIndex != 0)
+                    {
+                        if (Convert.ToInt32(dr["totalPostLast60Days"]) < Convert.ToInt32(totalPostPast60Days.SelectedValue))
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    if (costPerPost.SelectedIndex != 0)
+                    {
+                        if (Convert.ToInt32(dr["estimatedCostPerPost"]) < Convert.ToInt32(costPerPost.SelectedValue))
+                        {
+                            dr.Delete();
+                        }
+                    }
                 }
-                else if (Convert.ToInt32(dr["estimatedCostPerPost"]) < Convert.ToInt32(costPerPost.SelectedValue))
+                catch
                 {
-                    dr.Delete();
-                }
+                    // Do nothing, don't delete the data row.
+                } 
             }
             dTable.AcceptChanges();
 
