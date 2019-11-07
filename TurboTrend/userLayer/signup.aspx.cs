@@ -33,7 +33,7 @@ namespace TurboTrend.userLayer
             switch (iAccountStatus)
             {
                 case 0:
-                    AccountMsg.Text = "SUCCESS!";
+                    AccountMsg.Text = "Thank you for creating an account!";
                     // Hides all onscreen elements
                     pageContent.Visible = false;
                     pageContent.Enabled = false;
