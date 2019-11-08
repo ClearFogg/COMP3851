@@ -1,4 +1,4 @@
-# coding=UTF-8
+coding=UTF-8
 import sys
 from selenium import webdriver
 import time
@@ -15,7 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-os.chdir(r"Users\scott\Source\Repos\COMP3851\TurboTrend\InstagramScraper")
+os.chdir(r"C:\Users\ashle\Documents\UoN\2019\COMP3851B\Interface\Git\TurboTrend\InstagramScraper")
 
 # Initial user agent
 Options = webdriver.ChromeOptions()
